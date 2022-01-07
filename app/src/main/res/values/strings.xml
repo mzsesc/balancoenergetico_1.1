@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">balancoenergetico</string>
+    <string name="buttonacessnow">Acessar Agora</string>
+    <string name="buttonnewacount">Criar Nova Conta</string>
+    <string name="buttonbalacoenergetico">Balanço Energetico</string>
+    <string name="buttonfinace">Balanço Finaceiro</string>
+</resources>
