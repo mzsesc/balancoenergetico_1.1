@@ -1,12 +1,15 @@
 package com.ufs.balancoenergetico
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.view.Window
 import android.view.WindowManager
+import com.google.firebase.auth.FirebaseAuth
 
+
+@SuppressLint("CustomSplashScreen")
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +18,7 @@ class SplashScreen : AppCompatActivity() {
 
         // This is used to hide the status bar and make
         // the splash screen as a full screen activity.
-        window.setFlags(
+        this.window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
