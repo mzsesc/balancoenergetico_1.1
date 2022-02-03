@@ -6,16 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
-import com.google.firebase.auth.FirebaseAuth
 
 
 @SuppressLint("CustomSplashScreen")
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
-
         // This is used to hide the status bar and make
         // the splash screen as a full screen activity.
         this.window.setFlags(
@@ -29,6 +28,6 @@ class SplashScreen : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        },3000) //3000 is the delayed time in milliseconds.
+        },2000) //2000 is the delayed time in milliseconds.
     }
-}
+    }

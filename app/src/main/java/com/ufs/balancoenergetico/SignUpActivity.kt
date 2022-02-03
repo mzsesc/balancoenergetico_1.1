@@ -4,74 +4,96 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.widget.Button
-import android.widget.EditText
+import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.ufs.balancoenergetico.databinding.ActivitySignUpBinding
 
 
 class SignUpActivity : AppCompatActivity() {
+
+    private var binding: ActivitySignUpBinding? = null
+
+    private lateinit var auth: FirebaseAuth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
 
-        val btn_sing_up = findViewById<Button>(R.id.singupbtn)
-        val email_sign_up = findViewById<EditText>(R.id.email_sing_up)
-        val password_sing_up = findViewById<EditText>(R.id.password_sing_up)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
 
-        btn_sing_up.setOnClickListener{
-            when{
-                TextUtils.isEmpty(email_sign_up.text.toString().trim{ it <=' '})->{
-                    Toast.makeText(
-                        this,
-                        "Por favor, digite o e-mail",
-                        Toast.LENGTH_LONG
-                    ).show()
+        setContentView(binding!!.root)
+
+        auth = Firebase.auth
+
+
+
+        binding!!.singupbtn.setOnClickListener(View.OnClickListener {
+
+            when {
+                TextUtils.isEmpty(binding!!.emailSingUp.text) -> {
+
+                    binding!!.emailSingUp.error = "Campo de usuario não pode estar em branco"
+
                 }
+                TextUtils.isEmpty(binding!!.passwordSingUp.text) -> {
 
-                TextUtils.isEmpty(password_sing_up.text.toString().trim{ it <=' '}) ->{
-                    Toast.makeText(
-                        this,
-                        "Por favor, digite a senha",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    binding!!.passwordSingUp.error = "Campo de senha não pode estar em branco"
+
                 }
-                else ->{
+                else -> {
+                    inscreverse(
+                        binding!!.emailSingUp.text.toString(),
+                        binding!!.passwordSingUp.text.toString()
+                    )
 
-                    val email:String = email_sign_up.text.toString().trim{ it <=' '}
-                    val password:String = password_sing_up.text.toString().trim{ it <=' '}
 
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener { Task ->
-
-                            if (Task.isSuccessful) {
-
-                                val firebaseUser: FirebaseUser = Task.result!!.user!!
-
-                                Toast.makeText(
-                                    this,
-                                    "you are registered successfully.",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-
-                                val intent = Intent(this, MainActivity4::class.java)
-                                intent.flags =
-                                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                intent.putExtra("user id", firebaseUser.uid)
-                                intent.putExtra("email_id", email)
-                                startActivity(intent)
-                                finish()
-                            } else {
-                                Toast.makeText(
-                                    this,
-                                    Task.exception!!.message.toString(),
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                        }
                 }
             }
+        })
+
+    }
+
+    private fun inscreverse(email: String, senha: String) {
+
+        auth.let {
+            auth.createUserWithEmailAndPassword(email, senha)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        //Log.d(TAG, "signInWithCustomToken:success")
+                        //val user = auth.currentUser
+                        Toast.makeText(
+                            baseContext,
+                            "Autenticação bem-sucedida.",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        abrePricipal()
+                        //updateUI()
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        //Log.w(TAG, "signInWithCustomToken:failure", task.exception)
+                        Toast.makeText(
+                            baseContext,
+                            "Falha na autenticação.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        //updateUI()
+                    }
+                }
         }
+
+    }
+
+    private fun abrePricipal() {
+
+        binding!!.emailSingUp.text.clear()
+        binding!!.passwordSingUp.text.clear()
+
+        startActivity(Intent(this, MainActivity4::class.java))
+        finish()
+
     }
 }

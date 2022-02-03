@@ -3,41 +3,45 @@ package com.ufs.balancoenergetico
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.ufs.balancoenergetico.databinding.ActivityMain4Binding
 
 class MainActivity4 : AppCompatActivity() {
+
+    private var binding:ActivityMain4Binding? = null
+    private lateinit var auth: FirebaseAuth
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main4)
 
-        val logoutbtn = findViewById<Button>(R.id.logoutbtn)
+        binding = ActivityMain4Binding.inflate(layoutInflater)
 
-        logoutbtn.setOnClickListener{
-            FirebaseAuth.getInstance().signOut()
+        setContentView(binding!!.root)
 
-            val intent = Intent (this,MainActivity::class.java)
-            startActivity(intent)
+        auth = Firebase.auth
 
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        updateUI()
 
+        binding!!.logoutbtn.setOnClickListener{
+            auth.signOut()
 
-            //OU pode ser assim
-            // startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+
         }
+    }
 
-        val uidusuario = findViewById<TextView>(R.id.uidusuario)
-        val idemail = findViewById<TextView>(R.id.idemail)
-
-        val userID = intent.getStringExtra("user id")
-        val emailID = intent.getStringExtra("email_id")
-
-        uidusuario.text = "User ID :: $userID"
-        idemail.text = "Email ID:: $emailID"
-
-
-
-
+    private fun updateUI() {
+        val usuario: FirebaseUser? = auth.currentUser
+        try {
+            binding?.idemail?.text = usuario?.email //ou displayName
+        } catch (e: Exception) {
+            binding?.idemail?.text = ""
+        }
     }
 }
