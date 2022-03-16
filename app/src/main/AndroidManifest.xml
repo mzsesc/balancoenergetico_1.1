@@ -10,23 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Balancoenergetico" >
         <activity
-            android:name=".MainActivity5"
+            android:name=".BalancoEnergeticoActivity"
             android:exported="false" />
-
         <activity
-            android:name=".MainActivity4"
-            android:exported="true"/>
-
+            android:name=".ColheitaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DesenvolvimentoMilhoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SemeioeAdubacaoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PreparacaodoSoloActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
-
-        <activity android:name=".MainActivity" />
-
+        <activity android:name=".InitialMainActivity" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"

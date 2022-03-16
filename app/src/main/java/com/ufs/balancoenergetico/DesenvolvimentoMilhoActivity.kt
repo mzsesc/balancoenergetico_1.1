@@ -3,9 +3,9 @@ package com.ufs.balancoenergetico
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity5 : AppCompatActivity() {
+class DesenvolvimentoMilhoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main5)
+        setContentView(R.layout.activity_desenvolvimento_milho)
     }
 }

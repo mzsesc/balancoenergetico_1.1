@@ -3,57 +3,45 @@ package com.ufs.balancoenergetico
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.ufs.balancoenergetico.databinding.ActivityMainBinding
 
+class MainActivity : AppCompatActivity() {
 
-class MainActivity : AppCompatActivity(){
-
+    private var binding: ActivityMainBinding? = null
     private lateinit var auth: FirebaseAuth
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        setContentView(binding!!.root)
 
         auth = Firebase.auth
 
+        updateUI()
 
-        val buttonacessnow = findViewById<Button>(R.id.btn_login)
-            buttonacessnow.setOnClickListener{
-                val acessnow = Intent(this, LoginActivity::class.java)
-                startActivity(acessnow)
+        binding!!.logoutbtn.setOnClickListener{
+            auth.signOut()
 
-            }
-
-        val buttonnewaccount = findViewById<Button>(R.id.button_new_account)
-        buttonnewaccount.setOnClickListener{
-            val newaccount = Intent(this, SignUpActivity::class.java)
-            startActivity(newaccount)
+            startActivity(Intent(this,InitialMainActivity::class.java))
+            finish()
 
         }
-
     }
 
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-
-        if (currentUser != null)
-            if (currentUser.email?.isNotEmpty() == true) {
-                Toast.makeText(
-                    baseContext,
-                    "usuario" + currentUser.email + "logado",
-                    Toast.LENGTH_SHORT
-                ).show()
-                startActivity(Intent(this, MainActivity4::class.java))
-                finish()
-            }
-        //updateUI()
+    private fun updateUI() {
+        val usuario: FirebaseUser? = auth.currentUser
+        try {
+            binding?.idemail?.text = usuario?.email //ou displayName
+        } catch (e: Exception) {
+            binding?.idemail?.text = ""
+        }
     }
-
-
-
 }

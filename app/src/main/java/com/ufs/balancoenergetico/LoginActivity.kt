@@ -86,7 +86,7 @@ class LoginActivity : AppCompatActivity() {
         binding!!.emailSingUp.text.clear()
         binding!!.passwordSingUp.text.clear()
 
-        val intent = Intent(this, MainActivity4::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
 
         finish()
