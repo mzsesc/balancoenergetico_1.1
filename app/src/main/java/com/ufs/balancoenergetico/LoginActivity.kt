@@ -3,7 +3,6 @@ package com.ufs.balancoenergetico
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -27,13 +26,15 @@ class LoginActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
-        binding!!.loginbtn.setOnClickListener(View.OnClickListener {
 
-            if (TextUtils.isEmpty(binding!!.emailSingUp.text)) {
+
+        binding!!.loginbtn.setOnClickListener {
+
+            if (TextUtils.isEmpty(binding!!.emailSingUp.text.toString())) {
 
                 binding!!.emailSingUp.error = "Campo de usuario não pode estar em branco"
 
-            } else if (TextUtils.isEmpty(binding!!.passwordSingUp.text)) {
+            } else if (TextUtils.isEmpty(binding!!.passwordSingUp.text.toString())) {
 
                 binding!!.passwordSingUp.error = "Campo de senha não pode estar em branco"
 
@@ -45,14 +46,14 @@ class LoginActivity : AppCompatActivity() {
             }
 
 
-        })
+        }
 
     }
 
-    private fun logar(email: String, senha: String) {
+    private fun logar(email: String, password: String) {
 
         auth.let {
-            auth.signInWithEmailAndPassword(email, senha)
+            auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information

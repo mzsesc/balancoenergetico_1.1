@@ -34,6 +34,11 @@ class MainActivity : AppCompatActivity() {
             finish()
 
         }
+
+        binding!!.button5.setOnClickListener {
+
+            startActivity(Intent(this, BalancoEnergeticoActivity::class.java))
+        }
     }
 
     private fun updateUI() {

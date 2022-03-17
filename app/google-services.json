@@ -7,6 +7,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:1081548831399:android:3c9469e8f6c3303aae3982",
+        "android_client_info": {
+          "package_name": "com.example.balancoenergetico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081548831399-mjecrh6m5v1p8aukmm3ncbrincvu0bgu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.balancoenergetico",
+            "certificate_hash": "1e48cec313a0f9700df5f3e3b41082c651b3c047"
+          }
+        },
+        {
+          "client_id": "1081548831399-c68qugcot3li9545vg442sttd7r64bf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBTRQ47X4GgYtFzd280tZ1ZBfiYMaNgnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081548831399-c68qugcot3li9545vg442sttd7r64bf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:1081548831399:android:17bbb76d9bd4a6d7ae3982",
         "android_client_info": {
           "package_name": "com.ufs.balancoenergetico"
@@ -19,6 +56,14 @@
           "android_info": {
             "package_name": "com.ufs.balancoenergetico",
             "certificate_hash": "09157937ac029b28331e7ecf727f0e55e2c541d8"
+          }
+        },
+        {
+          "client_id": "1081548831399-vnkki9n797jrpelg2ckd5o647mc41lh3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ufs.balancoenergetico",
+            "certificate_hash": "e7ce8a9e80120aaec1d961349470f72b7cc29ccc"
           }
         },
         {
