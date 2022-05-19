@@ -59,4 +59,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         tools:text="abc@gmail.com" />
+
 </RelativeLayout>

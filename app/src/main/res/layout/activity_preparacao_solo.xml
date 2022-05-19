@@ -6,73 +6,84 @@
     android:layout_height="match_parent"
     tools:context=".PreparacaodoSoloActivity">
 
-    <TextView
-        android:id="@+id/textView8"
+    <EditText
+        android:id="@+id/lubrificante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="lubrificante"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="10dp"
+        android:digits="1234567890,."
+        android:inputType="numberDecimal"
+        android:hint="Lubrificante"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/oleodissel" />
 
-    <TextView
-        android:id="@+id/textView11"
+    <EditText
+        android:id="@+id/trator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="trator"
-        android:layout_marginTop="80dp"
+        android:hint="Trator"
+        android:inputType="numberDecimal"
+        android:digits="1234567890,."
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/lubrificante" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/preparacaosolo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PREPARAÇÃO DO SOLO"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
+    <EditText
+        android:id="@+id/impleAgric"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="implementos agrícolas"
+        android:hint="Implementos Agrícolas"
+        android:inputType="numberDecimal"
+        android:digits="1234567890,."
         android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/preparacaosolo" />
 
-    <TextView
-        android:id="@+id/textView5"
+    <EditText
+        android:id="@+id/maobra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="mão de obra"
-        android:layout_marginTop="80dp"
+        android:hint="Mão de Obra"
+        android:inputType="numberDecimal"
+        android:digits="1234567890,."
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/impleAgric" />
 
-    <TextView
-        android:id="@+id/textView6"
+    <EditText
+        android:id="@+id/oleodissel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="óleo diesel"
-        android:layout_marginTop="80dp"
+        android:hint="Óleo Diesel"
+        android:inputType="numberDecimal"
+        android:digits="1234567890,."
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/maobra" />
 
-    <TextView
-        android:id="@+id/textView7"
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="corretivo do solo"
-        android:layout_marginTop="80dp"
+        android:text="salvar"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/trator" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
