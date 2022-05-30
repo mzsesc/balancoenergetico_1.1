@@ -3,6 +3,7 @@ package com.ufs.balancoenergetico
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import com.ufs.balancoenergetico.databinding.ActivityBalancoEnergeticoBinding
 
 class BalancoEnergeticoActivity : AppCompatActivity() {
@@ -18,26 +19,24 @@ class BalancoEnergeticoActivity : AppCompatActivity() {
 
         binding!!.textView23.setOnClickListener {
 
-            startActivity(Intent(this,PreparacaodoSoloActivity::class.java))
+            startActivity(Intent(this, PreparacaodoSoloActivity::class.java))
 
         }
         binding!!.textView24.setOnClickListener {
 
-            startActivity(Intent(this,SemeioeAdubacaoActivity::class.java))
+            startActivity(Intent(this, SemeioeAdubacaoActivity::class.java))
 
         }
         binding!!.textView25.setOnClickListener {
 
-            startActivity(Intent(this,DesenvolvimentoMilhoActivity::class.java))
+            startActivity(Intent(this, DesenvolvimentoMilhoActivity::class.java))
 
         }
         binding!!.textView26.setOnClickListener {
 
-            startActivity(Intent(this,ColheitaActivity::class.java))
+            startActivity(Intent(this, ColheitaActivity::class.java))
+            finish()
 
         }
-
-
-
     }
 }

@@ -1,7 +1,9 @@
 package com.ufs.balancoenergetico
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -22,13 +24,17 @@ class ColheitaActivity : AppCompatActivity() {
         binding = ActivityColheitaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         binding.button7.setOnClickListener {
+
             val colheitadeira = binding.textView20.text.toString()
+           // val ch = colheitadeira.toInt()
+           // val chh = ch * cfch
             val maodeobra = binding.textView22.text.toString()
             val ensiladeira = binding.textView21.text.toString()
             val colheita = binding.textView19.text.toString()
 
-            database = FirebaseDatabase.getInstance().getReference("colheita")
+            database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
             val User = datacolheita(colheitadeira, maodeobra, ensiladeira)
             database.child(colheita).setValue(User).addOnSuccessListener {
 
@@ -42,6 +48,12 @@ class ColheitaActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
             }
+            intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            finish()
+
+
+
         }
     }
 }

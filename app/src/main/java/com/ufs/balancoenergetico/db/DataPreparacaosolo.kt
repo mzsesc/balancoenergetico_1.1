@@ -22,7 +22,8 @@ data class dataDesenvolvimentomilho(
 )
 
 data class datacolheita(
-    val colheitadera: String? = null,
+    val colheitader: String? = null,
     val maobra: String? = null,
-    val ensiladeira: String? = null
+    val ensiladeira: String? = null,
+    val test: String? = null
 )

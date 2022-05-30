@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -12,52 +13,78 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Finaceiro" />
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Finaceiro"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Energetico" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Energetico"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:text="Relatório "
-        android:layout_below="@id/button5"
-        android:layout_marginTop="10dp"/>
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/logoutbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Logout" />
+        android:layout_marginTop="8dp"
+        android:text="Logout"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idemail" />
 
     <TextView
         android:id="@+id/uidusuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/logoutbtn"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:inputType="text" />
+        android:inputType="text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoutbtn" />
 
     <TextView
         android:id="@+id/idemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/uidusuario"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         tools:text="abc@gmail.com" />
 
-</RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="412dp"
+        android:layout_height="536dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        tools:listitem="@layout/list_item"
+        tools:itemCount="1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

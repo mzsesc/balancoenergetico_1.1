@@ -25,7 +25,7 @@ class DesenvolvimentoMilhoActivity : AppCompatActivity() {
             val nitrogenio = binding.textView18.text.toString()
             val desenvolvimento = binding.textView14.text.toString()
 
-            database = FirebaseDatabase.getInstance().getReference("Desenvolvimento do Milho")
+            database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
             val User = dataDesenvolvimentomilho(fertilizante, inseticidas, pesticidas, nitrogenio)
             database.child(desenvolvimento).setValue(User).addOnSuccessListener {
 

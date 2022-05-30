@@ -22,7 +22,7 @@ class SemeioeAdubacaoActivity : AppCompatActivity() {
             val fertilizantesintetico = binding.textView12.text.toString()
             val materiaorganica = binding.textView13.text.toString()
             val semeioeAdubacao = binding.textView9.text.toString()
-            database = FirebaseDatabase.getInstance().getReference("Semeio e Adubacao")
+            database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
             val User= dataSemeioeadubacao(tipodesemente, fertilizantesintetico, materiaorganica)
             database.child(semeioeAdubacao).setValue(User).addOnSuccessListener {
 
