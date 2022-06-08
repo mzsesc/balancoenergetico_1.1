@@ -1,10 +1,12 @@
-package com.ufs.balancoenergetico
+package com.ufs.balancoenergetico.ActivitysBalancoEnergertico
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.ufs.balancoenergetico.*
 import com.ufs.balancoenergetico.databinding.ActivityPreparacaoSoloBinding
 import com.ufs.balancoenergetico.db.dataPreparacaosolo
 
@@ -20,22 +22,28 @@ class PreparacaodoSoloActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
 
+            val maodebra = binding.maobra.text.toString()
+            val toDoubleMaoDeObra = maodebra.toDouble()
+            val CalMaoDeObra = (toDoubleMaoDeObra * CfMaoDeObra)
 
-
-
-            val impleAgric = binding.impleAgric.text.toString()
-            val maobra = binding.maobra.text.toString()
             val oleodissel = binding.oleodissel.text.toString()
-            val lubrificante = binding.lubrificante.text.toString()
-            val trator = binding.trator.text.toString()
+            val toDoubleOleoDissel = oleodissel.toDouble()
+            val CalOleoDissel = (toDoubleOleoDissel * CfCombustivel)
 
-            val preparacaosolo = binding.preparacaosolo.text.toString()
+            val lubrificante = binding.lubrificante.text.toString()
+            val toDoubleLubrificante = lubrificante.toDouble()
+            val CalLubricante = (toDoubleLubrificante * CfLubrificante)
+
+            val trator = binding.trator.text.toString()
+            val toDoubleTrator = trator.toDouble()
+            val CalTrator = (toDoubleTrator * CfMaquinasAgricolas)
+
+            val preparacaosolo = "PS"
 
             database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
-            val User = dataPreparacaosolo(impleAgric,maobra,oleodissel,lubrificante,trator)
+            val User = dataPreparacaosolo(CalOleoDissel, CalLubricante, CalMaoDeObra, CalTrator)
             database.child(preparacaosolo).setValue(User).addOnSuccessListener {
 
-                binding.impleAgric.text.clear()
                 binding.maobra.text.clear()
                 binding.oleodissel.text.clear()
                 binding.lubrificante.text.clear()
@@ -48,6 +56,9 @@ class PreparacaodoSoloActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
             }
+            intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

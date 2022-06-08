@@ -1,9 +1,9 @@
-package com.ufs.balancoenergetico
+package com.ufs.balancoenergetico.ActivitysBalancoEnergertico
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
+import android.provider.AlarmClock.EXTRA_MESSAGE
 import com.ufs.balancoenergetico.databinding.ActivityBalancoEnergeticoBinding
 
 class BalancoEnergeticoActivity : AppCompatActivity() {
@@ -17,26 +17,31 @@ class BalancoEnergeticoActivity : AppCompatActivity() {
 
         setContentView(binding!!.root)
 
-        binding!!.textView23.setOnClickListener {
+
+        //val userEmail = intent.getStringExtra(EXTRA_MESSAGE)
+
+        binding!!.button16.setOnClickListener {
 
             startActivity(Intent(this, PreparacaodoSoloActivity::class.java))
 
         }
-        binding!!.textView24.setOnClickListener {
+        binding!!.button17.setOnClickListener {
 
             startActivity(Intent(this, SemeioeAdubacaoActivity::class.java))
 
         }
-        binding!!.textView25.setOnClickListener {
+        binding!!.button18.setOnClickListener {
 
             startActivity(Intent(this, DesenvolvimentoMilhoActivity::class.java))
 
         }
-        binding!!.textView26.setOnClickListener {
+        binding!!.button19.setOnClickListener {
 
             startActivity(Intent(this, ColheitaActivity::class.java))
-            finish()
+            onBackPressed()
 
         }
+
+
     }
 }

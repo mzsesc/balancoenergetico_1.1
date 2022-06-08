@@ -1,14 +1,15 @@
-package com.ufs.balancoenergetico
+package com.ufs.balancoenergetico.ActivitysBalancoEnergertico
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.ufs.balancoenergetico.*
 import com.ufs.balancoenergetico.databinding.ActivityDesenvolvimentoMilhoBinding
-import com.ufs.balancoenergetico.databinding.ActivitySemeioeAdubacaoBinding
-import com.ufs.balancoenergetico.db.dataDesenvolvimentomilho
-import com.ufs.balancoenergetico.db.dataSemeioeadubacao
+import com.ufs.balancoenergetico.db.dataPreparacaosolo
+import com.ufs.balancoenergetico.db.datacrescimentomilho
 
 class DesenvolvimentoMilhoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDesenvolvimentoMilhoBinding
@@ -19,20 +20,28 @@ class DesenvolvimentoMilhoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button3.setOnClickListener {
-            val fertilizante = binding.textView15.text.toString()
+            val fungicida = binding.textView15.text.toString()
+            val toDoubleFungicida = fungicida.toDouble()
+            val CalFungicida = (toDoubleFungicida * CfFungicida)
+
             val inseticidas = binding.textView16.text.toString()
-            val pesticidas = binding.textView17.text.toString()
-            val nitrogenio = binding.textView18.text.toString()
-            val desenvolvimento = binding.textView14.text.toString()
+            val toDoubleInseticida = inseticidas.toDouble()
+            val CalInsenticida = (toDoubleInseticida * CfInceticida)
+
+            val herbicida = binding.textView17.text.toString()
+            val toDoubleHerbicida = herbicida.toDouble()
+            val CalHerbicida = (toDoubleHerbicida * CfHerbicida)
+
+
+            val desenvolvimento = "DM"
 
             database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
-            val User = dataDesenvolvimentomilho(fertilizante, inseticidas, pesticidas, nitrogenio)
+            val User = datacrescimentomilho(CalFungicida, CalHerbicida, CalInsenticida)
             database.child(desenvolvimento).setValue(User).addOnSuccessListener {
 
                 binding.textView15.text.clear()
                 binding.textView16.text.clear()
                 binding.textView17.text.clear()
-                binding.textView18.text.clear()
 
 
 
@@ -42,6 +51,9 @@ class DesenvolvimentoMilhoActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
             }
+            intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

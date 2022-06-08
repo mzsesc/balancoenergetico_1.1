@@ -10,9 +10,11 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
+
 class InitialMainActivity : AppCompatActivity(){
 
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_initial_main)
@@ -36,6 +38,8 @@ class InitialMainActivity : AppCompatActivity(){
 
     }
 
+
+
     public override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -45,8 +49,8 @@ class InitialMainActivity : AppCompatActivity(){
             if (currentUser.email?.isNotEmpty() == true) {
                 Toast.makeText(
                     baseContext,
-                    "usuario" + currentUser.email + "logado",
-                    Toast.LENGTH_SHORT
+                    "O usuario " + currentUser.email + " estar logado",
+                    Toast.LENGTH_LONG
                 ).show()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()

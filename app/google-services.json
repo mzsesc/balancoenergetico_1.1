@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1081548831399-jo5eontfh5eos6mdrr251oqq3snd7vvq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ufs.balancoenergetico",
+            "certificate_hash": "6ac05d6f57a8a816aaaa663b9ebc731acf71cefc"
+          }
+        },
+        {
           "client_id": "1081548831399-klhqfhn2vu9sv9vtkleu1usqiknbug49.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

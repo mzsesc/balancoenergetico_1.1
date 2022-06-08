@@ -4,28 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PreparacaodoSoloActivity">
+    tools:context=".ActivitysBalancoEnergertico.PreparacaodoSoloActivity">
 
     <EditText
         android:id="@+id/lubrificante"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:digits="1234567890,."
+        android:hint="LUBRIFICANTE"
         android:inputType="numberDecimal"
-        android:hint="Lubrificante"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/oleodissel" />
 
     <EditText
         android:id="@+id/trator"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Trator"
-        android:inputType="numberDecimal"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:digits="1234567890,."
-        android:layout_marginTop="10dp"
+        android:hint="TRATOR"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lubrificante" />
@@ -34,54 +38,50 @@
         android:id="@+id/preparacaosolo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="PREPARAÇÃO DO SOLO"
-        android:layout_marginTop="20dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <EditText
-        android:id="@+id/impleAgric"
-        android:layout_width="wrap_content"
+        android:id="@+id/maobra"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Implementos Agrícolas"
-        android:inputType="numberDecimal"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:digits="1234567890,."
-        android:layout_marginTop="80dp"
+        android:hint="MÃO DE OBRA"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/preparacaosolo" />
 
     <EditText
-        android:id="@+id/maobra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Mão de Obra"
-        android:inputType="numberDecimal"
-        android:digits="1234567890,."
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/impleAgric" />
-
-    <EditText
         android:id="@+id/oleodissel"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Óleo Diesel"
-        android:inputType="numberDecimal"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:digits="1234567890,."
-        android:layout_marginTop="10dp"
+        android:hint="ÓLEO DISSEL"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/maobra" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="salvar"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Salva Dados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/trator" />

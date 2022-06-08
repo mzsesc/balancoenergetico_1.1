@@ -1,29 +1,32 @@
 package com.ufs.balancoenergetico.db
 
+
 data class dataPreparacaosolo(
-    val implementos: String? = null,
-    val maobra: String? = null,
-    val oleodissel: String? = null,
-    val lubrificante: String? = null,
-    val trator: String? = null
+    val oleodissel: Double? = null,
+    val lubrificante: Double? = null,
+    val maodeobra: Double? = null,
+    val trator: Double? = null
 )
 
-data class dataSemeioeadubacao(
-    val tipodesemente: String? = null,
-    val fertilizantesintetico: String? = null,
-    val materiaorganica: String? = null,
+data class datasemeioadubacao(
+    val tipodesemente: Double? = null,
+    val fertilizanteazotado: Double? = null,
+    val fertilizantepotassico: Double? = null,
+    val fertilizantefosfatado: Double? = null
 )
 
-data class dataDesenvolvimentomilho(
-    val fertilizante: String? = null,
-    val inseticidas: String? = null,
-    val pesticidas: String? = null,
-    val nitrogenio: String? = null
+data class datacrescimentomilho(
+    val fungicida: Double? = null,
+    val herbicida: Double? = null,
+    val inseticida: Double? = null
 )
 
 data class datacolheita(
-    val colheitader: String? = null,
-    val maobra: String? = null,
-    val ensiladeira: String? = null,
-    val test: String? = null
+    val colheitadera: Double? = null,
+    val maodeobra: Double? = null,
+    val ensiladeira: Double? = null
+)
+
+data class DataUsuario(
+    val usuario: String? = null,
 )

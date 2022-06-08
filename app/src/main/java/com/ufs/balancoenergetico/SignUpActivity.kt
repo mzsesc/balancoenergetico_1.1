@@ -8,13 +8,18 @@ import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import com.ufs.balancoenergetico.databinding.ActivitySignUpBinding
+import com.ufs.balancoenergetico.db.DataUsuario
+import com.ufs.balancoenergetico.db.datacolheita
 
 
 class SignUpActivity : AppCompatActivity() {
 
     private var binding: ActivitySignUpBinding? = null
+
 
     private lateinit var auth: FirebaseAuth
 
@@ -44,10 +49,13 @@ class SignUpActivity : AppCompatActivity() {
 
                 }
                 else -> {
+
                     inscreverse(
                         binding!!.emailSingUp.text.toString(),
                         binding!!.passwordSingUp.text.toString()
                     )
+
+
 
 
                 }
@@ -84,6 +92,8 @@ class SignUpActivity : AppCompatActivity() {
                     }
                 }
         }
+
+
 
     }
 
