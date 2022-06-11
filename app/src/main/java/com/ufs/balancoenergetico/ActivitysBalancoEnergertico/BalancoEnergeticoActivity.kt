@@ -23,21 +23,30 @@ class BalancoEnergeticoActivity : AppCompatActivity() {
         binding!!.button16.setOnClickListener {
 
             startActivity(Intent(this, PreparacaodoSoloActivity::class.java))
+            onBackPressed()
 
         }
         binding!!.button17.setOnClickListener {
 
             startActivity(Intent(this, SemeioeAdubacaoActivity::class.java))
+            onBackPressed()
 
         }
         binding!!.button18.setOnClickListener {
 
             startActivity(Intent(this, DesenvolvimentoMilhoActivity::class.java))
+            onBackPressed()
 
         }
         binding!!.button19.setOnClickListener {
 
             startActivity(Intent(this, ColheitaActivity::class.java))
+            onBackPressed()
+
+        }
+
+        binding!!.button20.setOnClickListener {
+            startActivity(Intent(this, ProducaoMilhoActivity::class.java))
             onBackPressed()
 
         }

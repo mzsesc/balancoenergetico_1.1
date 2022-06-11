@@ -1,55 +1,100 @@
-package com.ufs.balancoenergetico
+package com.ufs.balancoenergetico.ActivitysBalancoEnergertico
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.*
-import com.google.firebase.ktx.Firebase
-import com.ufs.balancoenergetico.ActivityBalancoFinanceiro.FinaceiroActivity
-import com.ufs.balancoenergetico.ActivitysBalancoEnergertico.MainBalancoEnergeticoActivity
-import com.ufs.balancoenergetico.databinding.ActivityMainBinding
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.ufs.balancoenergetico.databinding.ActivityMainBalancoEnergeticoBinding
+import com.ufs.balancoenergetico.db.Datasavesoma
 
-class MainActivity : AppCompatActivity() {
+class MainBalancoEnergeticoActivity : AppCompatActivity() {
 
-    private var binding: ActivityMainBinding? = null
-    private lateinit var auth: FirebaseAuth
+    private var binding: ActivityMainBalancoEnergeticoBinding? = null
     private lateinit var db: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBalancoEnergeticoBinding.inflate(layoutInflater)
 
         setContentView(binding!!.root)
 
-        auth = Firebase.auth
 
-        updateUI()
-
-        readDataSoma()
-        //soma()
-
-        binding!!.logoutbtn.setOnClickListener {
-            auth.signOut()
-            startActivity(Intent(this, InitialMainActivity::class.java))
+        binding!!.btnSaveDados.setOnClickListener{
+            startActivity(Intent(this,BalancoEnergeticoActivity::class.java))
         }
 
-        binding!!.button5.setOnClickListener {
-            startActivity(Intent(this, MainBalancoEnergeticoActivity::class.java))
+
+        soma()
+        readData()
+
+
+    }
+
+
+    private fun readData() {
+        db = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
+        db.child("CH").get().addOnSuccessListener {
+
+            if (it.exists()) {
+
+                val colheitadeira = it.child("colheitadera").value
+                val maodeobra = it.child("maodeobra").value
+                val ensilhadeira = it.child("ensiladeira").value
+
+                binding?.textViewColheitadeira?.text = ("$colheitadeira MJ/KG").toString()
+                binding?.textViewMaoDeObra?.text = ("$maodeobra  MJ/H").toString()
+                binding?.textViewEnsiladeira?.text = ("$ensilhadeira  MJ/KG").toString()
+            }
+        }
+        db.child("DM").get().addOnSuccessListener {
+
+            if (it.exists()) {
+                val fungicida = it.child("fungicida").value
+                val herbicida = it.child("herbicida").value
+                val inseticidas = it.child("inseticida").value
+
+                binding?.textViewFertilizante?.text = ("$fungicida MJ/KG").toString()
+                binding?.textViewInseticidas?.text = ("$herbicida MJ/KG").toString()
+                binding?.textViewPesticidas?.text = ("$inseticidas MJ/KG").toString()
+
+            }
 
         }
+        db.child("PS").get().addOnSuccessListener {
 
-        binding!!.Financeiro.setOnClickListener {
+            if (it.exists()) {
+                val oleodissel = it.child("lubrificante").value
+                val lubrificante = it.child("oleodissel").value
+                val trator = it.child("trator").value
 
-            startActivity(Intent(this, FinaceiroActivity::class.java))
+                binding?.textViewOleoDissel?.text = ("$oleodissel").toString()
+                binding?.textViewLubrificante?.text = lubrificante.toString()
+                binding?.textViewTrator?.text = trator.toString()
+            }
+        }
+        db.child("SA").get().addOnSuccessListener {
+
+            if (it.exists()) {
+
+                val tiposdesemente = it.child("tipodesemente").value
+                val fertilizanteazotado = it.child("fertilizanteazotado").value
+                val fertilizantepotassico = it.child("fertilizantepotassico").value
+                val fertilizantefosfatado = it.child("fertilizantefosfatado").value
+
+
+                binding?.textViewTipoDeSemente?.text = tiposdesemente.toString()
+                binding?.textViewFertilizanteAzotado?.text = fertilizanteazotado.toString()
+                binding?.textViewFertilizantePotassico?.text = fertilizantepotassico.toString()
+                binding?.textViewFertilizanteFosfatato?.text = fertilizantefosfatado.toString()
+
+            }
         }
     }
 
 
-/*
+
     private fun soma() {
         db = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
         db.get().addOnSuccessListener { it ->
@@ -123,44 +168,6 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }
-            }
-        }
-    }
-
- */
-
-    private fun updateUI() {
-        val usuario: FirebaseUser? = auth.currentUser
-        try {
-            binding?.idemail?.text = usuario?.email
-        } catch (e: Exception) {
-            binding?.idemail?.text = ""
-        }
-
-
-        // aqui cria o usuario no realtime o problema é que sobrescreve todos os dados após ser chamado
-        //Então tem que fazer o tratamento desses dados
-/*
-        val USUARIO = binding!!.idemail.text.toString()
-        val Users = "Usuarios:"
-
-        database = FirebaseDatabase.getInstance().reference
-        val User = DataUsuario(USUARIO)
-        database.child(Users).setValue(User).addOnSuccessListener {}
-
- */
-    }
-
-    private fun readDataSoma() {
-        db = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
-        db.child("soma").get().addOnSuccessListener {
-
-            if (it.exists()) {
-
-                val soma = it.child("soma").value
-
-                binding?.textViewTotalEnergetico?.text = ("$soma MJ/KG").toString()
-
             }
         }
     }

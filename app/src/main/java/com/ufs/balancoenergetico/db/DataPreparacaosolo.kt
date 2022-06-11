@@ -27,6 +27,14 @@ data class datacolheita(
     val ensiladeira: Double? = null
 )
 
+data class Datamilho(
+    val produçaodomilho:Double? = null,
+)
+
 data class DataUsuario(
     val usuario: String? = null,
+)
+
+data class Datasavesoma(
+    val soma:String? = null,
 )

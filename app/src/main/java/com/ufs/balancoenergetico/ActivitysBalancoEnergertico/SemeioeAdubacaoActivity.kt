@@ -20,19 +20,19 @@ class SemeioeAdubacaoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button2.setOnClickListener {
-            val tipodesemente = binding.textView11.text.toString()
+            val tipodesemente = binding.sementes.text.toString()
             val toDoubleTipoDeSemente = tipodesemente.toDouble()
             val CalTipoDeSemente = (toDoubleTipoDeSemente * CfTiposDeSemente)
 
-            val fertilizanteazotado = binding.textView12.text.toString()
-            val toDoubleFertilizanteAzotado = fertilizanteazotado.toDouble()
-            val CalFertilizanteAzotado = (toDoubleFertilizanteAzotado * CfFertilizanteAzotados)
+            val fertilizanteNitogenado = binding.fertilizanteNitogenado.text.toString()
+            val toDoubleFertilizanteNitogenado = fertilizanteNitogenado.toDouble()
+            val CalFertilizanteNitogenado = (toDoubleFertilizanteNitogenado * CfFertilizanteAzotados)
 
-            val fertilizantepotassico = binding.textView10.text.toString()
+            val fertilizantepotassico = binding.fertilizantePotassico.text.toString()
             val toDoubleFertilizantePotassico = fertilizantepotassico.toDouble()
             val CalFertilizantePotassico = (toDoubleFertilizantePotassico * CfFertilizantePotassico)
 
-            val fertilizantefosfatado = binding.textView13.text.toString()
+            val fertilizantefosfatado = binding.fertilizanteFosfatado.text.toString()
             val toDoubleFertilizanteFosfatado = fertilizantefosfatado.toDouble()
             val CalFertilizanteFosfatado = (toDoubleFertilizanteFosfatado * CfFertilizanteFosfotado)
 
@@ -42,16 +42,16 @@ class SemeioeAdubacaoActivity : AppCompatActivity() {
             database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
             val User = datasemeioadubacao(
                 CalTipoDeSemente,
-                CalFertilizanteAzotado,
+                CalFertilizanteNitogenado,
                 CalFertilizantePotassico,
                 CalFertilizanteFosfatado
             )
             database.child(semeioeAdubacao).setValue(User).addOnSuccessListener {
 
-                binding.textView10.text.clear()
-                binding.textView12.text.clear()
-                binding.textView11.text.clear()
-                binding.textView13.text.clear()
+                binding.fertilizanteFosfatado.text.clear()
+                binding.fertilizanteNitogenado.text.clear()
+                binding.fertilizantePotassico.text.clear()
+                binding.sementes.text.clear()
 
 
                 Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()

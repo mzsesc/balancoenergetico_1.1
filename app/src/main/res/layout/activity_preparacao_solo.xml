@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActivitysBalancoEnergertico.PreparacaodoSoloActivity">
+    <TextView
+        android:id="@+id/preparacaosolo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="PREPARAÇÃO DO SOLO"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/lubrificante"
@@ -34,17 +44,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lubrificante" />
 
-    <TextView
-        android:id="@+id/preparacaosolo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="PREPARAÇÃO DO SOLO"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/maobra"
@@ -68,7 +67,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:digits="1234567890,."
-        android:hint="ÓLEO DISSEL"
+        android:hint="ÓLEO DIESEL"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

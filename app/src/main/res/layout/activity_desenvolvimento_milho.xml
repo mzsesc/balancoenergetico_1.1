@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/textView15"
+        android:id="@+id/fungicida"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <EditText
-        android:id="@+id/textView16"
+        android:id="@+id/inseticida"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -44,10 +44,10 @@
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/fungicida" />
 
     <EditText
-        android:id="@+id/textView17"
+        android:id="@+id/herbicida"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -58,7 +58,7 @@
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/inseticida" />
 
     <Button
         android:id="@+id/button3"
@@ -69,6 +69,6 @@
         android:text="Salva Dados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/herbicida" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

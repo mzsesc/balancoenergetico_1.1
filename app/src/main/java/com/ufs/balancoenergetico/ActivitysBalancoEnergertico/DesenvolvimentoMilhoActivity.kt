@@ -20,15 +20,15 @@ class DesenvolvimentoMilhoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button3.setOnClickListener {
-            val fungicida = binding.textView15.text.toString()
+            val fungicida = binding.fungicida.text.toString()
             val toDoubleFungicida = fungicida.toDouble()
             val CalFungicida = (toDoubleFungicida * CfFungicida)
 
-            val inseticidas = binding.textView16.text.toString()
+            val inseticidas = binding.inseticida.text.toString()
             val toDoubleInseticida = inseticidas.toDouble()
             val CalInsenticida = (toDoubleInseticida * CfInceticida)
 
-            val herbicida = binding.textView17.text.toString()
+            val herbicida = binding.herbicida.text.toString()
             val toDoubleHerbicida = herbicida.toDouble()
             val CalHerbicida = (toDoubleHerbicida * CfHerbicida)
 
@@ -39,9 +39,9 @@ class DesenvolvimentoMilhoActivity : AppCompatActivity() {
             val User = datacrescimentomilho(CalFungicida, CalHerbicida, CalInsenticida)
             database.child(desenvolvimento).setValue(User).addOnSuccessListener {
 
-                binding.textView15.text.clear()
-                binding.textView16.text.clear()
-                binding.textView17.text.clear()
+                binding.fungicida.text.clear()
+                binding.inseticida.text.clear()
+                binding.herbicida.text.clear()
 
 
 

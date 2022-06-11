@@ -102,7 +102,7 @@ class SignUpActivity : AppCompatActivity() {
         binding!!.emailSingUp.text.clear()
         binding!!.passwordSingUp.text.clear()
 
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, OrientacaoActivity::class.java))
         finish()
 
     }

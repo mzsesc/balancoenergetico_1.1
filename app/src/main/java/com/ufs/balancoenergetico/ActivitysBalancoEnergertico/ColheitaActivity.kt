@@ -33,11 +33,11 @@ class ColheitaActivity : AppCompatActivity() {
 
         binding.button7.setOnClickListener {
 
-            val colheitadeira = binding.textView20.text.toString()
+            val colheitadeira = binding.colhedora.text.toString()
             val toDoubleColheitadeira = colheitadeira.toDouble()
             val CalColheita = (toDoubleColheitadeira * CfMaquinasAgricolas)
 
-            val maodeobra = binding.textView22.text.toString()
+            val maodeobra = binding.maodeobra.text.toString()
             val toDoubleMaoDeObra = maodeobra.toDouble()
             val CalMaoDeObra = (toDoubleMaoDeObra * CfMaoDeObra)
 
@@ -51,8 +51,8 @@ class ColheitaActivity : AppCompatActivity() {
             val User = datacolheita(CalColheita, CalMaoDeObra, CalEnsilhadeira)
             database.child(colheita).setValue(User).addOnSuccessListener {
 
-                binding.textView20.text.clear()
-                binding.textView22.text.clear()
+                binding.colhedora.text.clear()
+                binding.maodeobra.text.clear()
                 binding.textView21.text.clear()
 
                 Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()
