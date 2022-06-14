@@ -157,8 +157,10 @@ class MainBalancoEnergeticoActivity : AppCompatActivity() {
                                                     val soma =
                                                         CH + SA + MO + HC + IT  + FC + TS +
                                                                 FTA + FTP + FTF + OD + LB + TT
-                                                    val sm = ("$soma MJ")
-                                                    binding?.textViewTotalEnergetico?.text = sm
+                                                    val sm = soma
+                                                    binding?.textViewTotalEnergetico?.text = sm.toString()
+
+                                                    db.child("soma").setValue(sm)
                                                 }
                                             }
                                         }

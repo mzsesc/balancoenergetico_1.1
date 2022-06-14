@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
+import com.ufs.balancoenergetico.ObterBalancoActivity
 import com.ufs.balancoenergetico.databinding.ActivityBalancoEnergeticoBinding
 
 class BalancoEnergeticoActivity : AppCompatActivity() {
@@ -47,6 +48,13 @@ class BalancoEnergeticoActivity : AppCompatActivity() {
 
         binding!!.button20.setOnClickListener {
             startActivity(Intent(this, ProducaoMilhoActivity::class.java))
+            onBackPressed()
+
+        }
+
+        binding!!.button21.setOnClickListener {
+
+            startActivity(Intent(this, ObterBalancoActivity::class.java))
             onBackPressed()
 
         }

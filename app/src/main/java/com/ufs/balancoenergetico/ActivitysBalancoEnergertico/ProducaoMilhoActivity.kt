@@ -25,7 +25,7 @@ class ProducaoMilhoActivity : AppCompatActivity() {
 
             database = FirebaseDatabase.getInstance().getReference("Produção do Milho")
             val promilho = Datamilho(Doubleprodmilho)
-            database.child("prodmilho").setValue(promilho).addOnSuccessListener {
+            database.setValue(promilho).addOnSuccessListener {
 
 
                 binding!!.producaoMilho.text.clear()

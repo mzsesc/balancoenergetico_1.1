@@ -29,7 +29,10 @@ class MainActivity : AppCompatActivity() {
 
         updateUI()
 
-        readDataSoma()
+      //  readDataSoma()
+        //readDataProdMilho()
+
+        EE()
         //soma()
 
         binding!!.logoutbtn.setOnClickListener {
@@ -151,17 +154,73 @@ class MainActivity : AppCompatActivity() {
  */
     }
 
+
     private fun readDataSoma() {
         db = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
-        db.child("soma").get().addOnSuccessListener {
+        db.get().addOnSuccessListener {
 
             if (it.exists()) {
 
                 val soma = it.child("soma").value
 
-                binding?.textViewTotalEnergetico?.text = ("$soma MJ/KG").toString()
+                binding?.textViewTotalEnergetico?.text = soma.toString()
 
             }
         }
     }
+
+    private fun readDataProdMilho() {
+        db = FirebaseDatabase.getInstance().getReference("Produção do Milho")
+        db.get().addOnSuccessListener {
+
+            if (it.exists()) {
+
+                val prod = it.child("produçaodomilho").value
+
+                binding?.textViewTotalEnergeticoProduzido?.text = prod.toString()
+
+            }
+        }
+    }
+
+    private fun EE() {
+
+        db = FirebaseDatabase.getInstance().getReference("Produção do Milho")
+        db.get().addOnSuccessListener {
+
+            if (it.exists()) {
+
+                val prod = it.child("produçaodomilho").value.toString()
+                val PD = prod.toDouble()
+
+                binding?.textViewTotalEnergeticoProduzido?.text = prod
+
+
+                db = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
+                db.get().addOnSuccessListener {
+
+                    if (it.exists()) {
+
+                        val soma = it.child("soma").value.toString()
+
+                        val SM = soma.toDouble()
+
+                        binding?.textViewTotalEnergetico?.text = soma
+
+                        val EE = (PD / SM)
+                        val RE = (SM / PD)
+                        val BE = PD - SM
+                        binding?.textViewTotalEficaciaEnergetica?.text = EE.toString()
+                        binding?.textViewRazOEnergTica?.text = RE.toString()
+                        binding?.textViewBalanOEnergTico?.text = BE.toString()
+
+
+                    }
+                }
+
+
+            }
+        }
+    }
+
 }
