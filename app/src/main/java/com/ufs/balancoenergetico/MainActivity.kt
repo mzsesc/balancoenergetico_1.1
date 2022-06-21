@@ -11,12 +11,17 @@ import com.google.firebase.ktx.Firebase
 import com.ufs.balancoenergetico.ActivityBalancoFinanceiro.FinaceiroActivity
 import com.ufs.balancoenergetico.ActivitysBalancoEnergertico.MainBalancoEnergeticoActivity
 import com.ufs.balancoenergetico.databinding.ActivityMainBinding
+import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
     private lateinit var auth: FirebaseAuth
     private lateinit var db: DatabaseReference
+    val df = DecimalFormat("#.#", DecimalFormatSymbols(Locale.ENGLISH))
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,85 +57,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-/*
-    private fun soma() {
-        db = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
-        db.get().addOnSuccessListener { it ->
-
-            if (it.exists()) {
-                db.child("CH").get().addOnSuccessListener { it ->
-                    if (it.exists()) {
-
-                        val colheitadera = it.child("colheitadera").value.toString()
-                        val ensiladeira = it.child("ensiladeira").value.toString()
-                        val maodeobra = it.child("maodeobra").value.toString()
-                        val CH = colheitadera.toDouble()
-                        val SA = ensiladeira.toDouble()
-                        val MO = maodeobra.toDouble()
-
-                        if (it.exists()) {
-                            db.child("DM").get().addOnSuccessListener { it ->
-
-                                val fungicida = it.child("fungicida").value.toString()
-                                val herbicida = it.child("herbicida").value.toString()
-                                val inseticidas = it.child("inseticida").value.toString()
-
-                                val FC = fungicida.toDouble()
-                                val HC = herbicida.toDouble()
-                                val IT = inseticidas.toDouble()
-
-                                if (it.exists()) {
-                                    db.child("SA").get().addOnSuccessListener { it ->
-                                        if (it.exists()) {
-
-                                            val tiposdesemente =
-                                                it.child("tipodesemente").value.toString()
-                                            val fertilizanteazotado =
-                                                it.child("fertilizanteazotado").value.toString()
-                                            val fertilizantepotassico =
-                                                it.child("fertilizantepotassico").value.toString()
-                                            val fertilizantefosfatado =
-                                                it.child("fertilizantefosfatado").value.toString()
-
-                                            val TS = tiposdesemente.toDouble()
-                                            val FTA = fertilizanteazotado.toDouble()
-                                            val FTP = fertilizantepotassico.toDouble()
-                                            val FTF = fertilizantefosfatado.toDouble()
-
-
-                                            db.child("PS").get().addOnSuccessListener { it ->
-
-                                                if (it.exists()) {
-                                                    val oleodissel =
-                                                        it.child("lubrificante").value.toString()
-                                                    val lubrificante =
-                                                        it.child("oleodissel").value.toString()
-                                                    val trator = it.child("trator").value.toString()
-
-                                                    val OD = oleodissel.toDouble()
-                                                    val LB = lubrificante.toDouble()
-                                                    val TT = trator.toDouble()
-
-
-                                                    val soma =
-                                                        CH + SA + MO + HC + IT  + FC + TS +
-                                                                FTA + FTP + FTF + OD + LB + TT
-                                                    val sm = ("$soma MJ")
-                                                    binding?.textViewTotalEnergetico?.text = sm
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
- */
 
     private fun updateUI() {
         val usuario: FirebaseUser? = auth.currentUser
@@ -202,17 +128,26 @@ class MainActivity : AppCompatActivity() {
                     if (it.exists()) {
 
                         val soma = it.child("soma").value.toString()
+                        val Doublesoma = soma.toDouble()
+                        val rounded1 = df.format(Doublesoma).toDouble()
 
-                        val SM = soma.toDouble()
 
-                        binding?.textViewTotalEnergetico?.text = soma
+                        val SM:Double = Doublesoma
+
+                        binding?.textViewTotalEnergetico?.text = ("$rounded1").toString()
 
                         val EE = (PD / SM)
+                        val rounded2 = df.format(EE).toDouble()
+
                         val RE = (SM / PD)
+                        val rounded3 = df.format(RE).toDouble()
+
                         val BE = PD - SM
-                        binding?.textViewTotalEficaciaEnergetica?.text = EE.toString()
-                        binding?.textViewRazOEnergTica?.text = RE.toString()
-                        binding?.textViewBalanOEnergTico?.text = BE.toString()
+                        val rounded4 = df.format(BE).toDouble()
+
+                        binding?.textViewTotalEficaciaEnergetica?.text = ("$rounded2").toString()
+                        binding?.textViewRazOEnergTica?.text = ("$rounded3").toString()
+                        binding?.textViewBalanOEnergTico?.text = ("$rounded4").toString()
 
 
                     }

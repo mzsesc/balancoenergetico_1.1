@@ -7,8 +7,14 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.ufs.balancoenergetico.databinding.ActivityMainBalancoEnergeticoBinding
 import com.ufs.balancoenergetico.db.Datasavesoma
+import java.math.RoundingMode
+import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
+import java.util.*
 
 class MainBalancoEnergeticoActivity : AppCompatActivity() {
+
+    val df = DecimalFormat("#.#", DecimalFormatSymbols(Locale.ENGLISH))
 
     private var binding: ActivityMainBalancoEnergeticoBinding? = null
     private lateinit var db: DatabaseReference
@@ -34,30 +40,37 @@ class MainBalancoEnergeticoActivity : AppCompatActivity() {
 
 
     private fun readData() {
+
         db = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
         db.child("CH").get().addOnSuccessListener {
-
             if (it.exists()) {
 
                 val colheitadeira = it.child("colheitadera").value
+                val rounded1 = df.format(colheitadeira).toDouble()
                 val maodeobra = it.child("maodeobra").value
+                val rounded2 = df.format(maodeobra).toDouble()
                 val ensilhadeira = it.child("ensiladeira").value
+                val rounded3 = df.format(ensilhadeira).toDouble()
 
-                binding?.textViewColheitadeira?.text = ("$colheitadeira MJ/KG").toString()
-                binding?.textViewMaoDeObra?.text = ("$maodeobra  MJ/H").toString()
-                binding?.textViewEnsiladeira?.text = ("$ensilhadeira  MJ/KG").toString()
+
+                binding?.textViewColheitadeira?.text = ("$rounded1 MJ").toString()
+                binding?.textViewMaoDeObra?.text =  ("$rounded2 MJ").toString()
+                binding?.textViewEnsiladeira?.text = ("$rounded3 MJ").toString()
             }
         }
         db.child("DM").get().addOnSuccessListener {
 
             if (it.exists()) {
                 val fungicida = it.child("fungicida").value
+                val rounded1 = df.format(fungicida).toDouble()
                 val herbicida = it.child("herbicida").value
+                val rounded2 = df.format(herbicida).toDouble()
                 val inseticidas = it.child("inseticida").value
+                val rounded3 = df.format(inseticidas).toDouble()
 
-                binding?.textViewFertilizante?.text = ("$fungicida MJ/KG").toString()
-                binding?.textViewInseticidas?.text = ("$herbicida MJ/KG").toString()
-                binding?.textViewPesticidas?.text = ("$inseticidas MJ/KG").toString()
+                binding?.textViewFertilizante?.text = ("$rounded1 MJ").toString()
+                binding?.textViewInseticidas?.text = ("$rounded2 MJ").toString()
+                binding?.textViewPesticidas?.text = ("$rounded3 MJ").toString()
 
             }
 
@@ -66,12 +79,15 @@ class MainBalancoEnergeticoActivity : AppCompatActivity() {
 
             if (it.exists()) {
                 val oleodissel = it.child("lubrificante").value
+                val rounded1 = df.format(oleodissel).toDouble()
                 val lubrificante = it.child("oleodissel").value
+                val rounded2 = df.format(lubrificante).toDouble()
                 val trator = it.child("trator").value
+                val rounded3 = df.format(trator).toDouble()
 
-                binding?.textViewOleoDissel?.text = ("$oleodissel").toString()
-                binding?.textViewLubrificante?.text = lubrificante.toString()
-                binding?.textViewTrator?.text = trator.toString()
+                binding?.textViewOleoDissel?.text = ("$rounded1 MJ").toString()
+                binding?.textViewLubrificante?.text = ("$rounded2 MJ").toString()
+                binding?.textViewTrator?.text = ("$rounded3 MJ").toString()
             }
         }
         db.child("SA").get().addOnSuccessListener {
@@ -79,15 +95,19 @@ class MainBalancoEnergeticoActivity : AppCompatActivity() {
             if (it.exists()) {
 
                 val tiposdesemente = it.child("tipodesemente").value
+                val rounded1 = df.format(tiposdesemente).toDouble()
                 val fertilizanteazotado = it.child("fertilizanteazotado").value
+                val rounded2 = df.format(fertilizanteazotado).toDouble()
                 val fertilizantepotassico = it.child("fertilizantepotassico").value
+                val rounded3 = df.format(fertilizantepotassico).toDouble()
                 val fertilizantefosfatado = it.child("fertilizantefosfatado").value
+                val rounded4 = df.format(fertilizantefosfatado).toDouble()
 
 
-                binding?.textViewTipoDeSemente?.text = tiposdesemente.toString()
-                binding?.textViewFertilizanteAzotado?.text = fertilizanteazotado.toString()
-                binding?.textViewFertilizantePotassico?.text = fertilizantepotassico.toString()
-                binding?.textViewFertilizanteFosfatato?.text = fertilizantefosfatado.toString()
+                binding?.textViewTipoDeSemente?.text = ("$rounded1 MJ").toString()
+                binding?.textViewFertilizanteAzotado?.text = ("$rounded2 MJ").toString()
+                binding?.textViewFertilizantePotassico?.text = ("$rounded3 MJ").toString()
+                binding?.textViewFertilizanteFosfatato?.text = ("$rounded4 MJ").toString()
 
             }
         }
@@ -158,9 +178,11 @@ class MainBalancoEnergeticoActivity : AppCompatActivity() {
                                                         CH + SA + MO + HC + IT  + FC + TS +
                                                                 FTA + FTP + FTF + OD + LB + TT
                                                     val sm = soma
-                                                    binding?.textViewTotalEnergetico?.text = sm.toString()
+                                                    val rounded = df.format(sm).toDouble()
 
-                                                    db.child("soma").setValue(sm)
+                                                    binding?.textViewTotalEnergetico?.text = rounded.toString()
+
+                                                   db.child("soma").setValue(sm)
                                                 }
                                             }
                                         }

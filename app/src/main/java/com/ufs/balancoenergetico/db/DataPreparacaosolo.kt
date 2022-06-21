@@ -38,3 +38,9 @@ data class DataUsuario(
 data class Datasavesoma(
     val soma:String? = null,
 )
+
+data class DataBE(
+    val Be:Double?= null,
+    val Re:Double?= null,
+    val Ee:Double?= null
+    )

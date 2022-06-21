@@ -10,7 +10,4 @@ val CfHerbicida: Double = 283.61
 val CfInceticida: Double = 301.68
 val CfMaoDeObra: Double = 1.20
 val CfMaquinasAgricolas: Double = 90.69
-val CfTiposDeSemente: Double = 1.00// OBS tem que pesquisar para tira a media
-
-
-//tira materia organica
+val CfTiposDeSemente: Double = 33.22
