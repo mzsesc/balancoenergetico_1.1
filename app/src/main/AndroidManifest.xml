@@ -14,7 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Balancoenergetico">
         <activity
-            android:name=".ObterBalancoActivity"
+            android:name=".RelatorioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivitysBalancoEnergertico.ObterBalancoActivity"
             android:exported="false" />
         <activity
             android:name=".ActivitysBalancoEnergertico.ProducaoMilhoActivity"

@@ -33,12 +33,11 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         updateUI()
+        readDataSoma()
+        readDataProdMilho()
+        readDataEE()
 
-      //  readDataSoma()
-        //readDataProdMilho()
 
-        EE()
-        //soma()
 
         binding!!.logoutbtn.setOnClickListener {
             auth.signOut()
@@ -53,6 +52,11 @@ class MainActivity : AppCompatActivity() {
         binding!!.Financeiro.setOnClickListener {
 
             startActivity(Intent(this, FinaceiroActivity::class.java))
+        }
+
+        binding!!.button6.setOnClickListener {
+            startActivity(Intent(this,RelatorioActivity::class.java))
+
         }
     }
 
@@ -109,6 +113,27 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun readDataEE() {
+        db = FirebaseDatabase.getInstance().getReference("Eficacia Energetica,Razao Energetica,Balanco Energetico")
+        db.get().addOnSuccessListener {
+
+            if (it.exists()) {
+
+                val EE = it.child("EE").value
+                val RE = it.child("RE").value
+                val BE = it.child("BE").value
+                binding?.textViewTotalEficaciaEnergetica?.text = EE.toString()
+                binding?.textViewRazOEnergTica?.text = RE.toString()
+                binding?.textViewBalanOEnergTico?.text = BE.toString()
+
+            }
+        }
+    }
+
+
+
+
+/*
     private fun EE() {
 
         db = FirebaseDatabase.getInstance().getReference("Produção do Milho")
@@ -157,5 +182,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+*/
 }
