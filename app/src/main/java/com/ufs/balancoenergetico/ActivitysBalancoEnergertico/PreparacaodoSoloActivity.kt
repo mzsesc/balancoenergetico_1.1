@@ -50,17 +50,62 @@ class PreparacaodoSoloActivity : AppCompatActivity() {
             val CalTrator = (toDoubleTrator * CfMaquinasAgricolas)
             val rounded4 = df.format(CalTrator).toDouble()
 
+            val graxa = binding.graxa.text.toString()
+            val toDoubleGraxa = graxa.toDouble()
+            val CalGraxa = (toDoubleGraxa * Cfgraxa)
+            val rounded5 = df.format(CalGraxa).toDouble()
+
+            val semeadora = binding.semeadora.text.toString()
+            val toDoubleSemeadora = semeadora.toDouble()
+            val CalSemeadora = (toDoubleSemeadora * CfMaquinasAgricolas)
+            val rounded6 = df.format(CalSemeadora).toDouble()
+
+            val pulverizador = binding.pulverizador.text.toString()
+            val toDoublePulverizador = pulverizador.toDouble()
+            val CalPulverizador = (toDoublePulverizador * CfMaquinasAgricolas)
+            val rounded7 = df.format(CalPulverizador).toDouble()
+
+            val gradagem = binding.gradagem.text.toString()
+            val toDoubleGradagem = gradagem.toDouble()
+            val CalGradagem = (toDoubleGradagem * CfMaquinasAgricolas)
+            val rounded8 = df.format(CalGradagem).toDouble()
+
 
             val preparacaosolo = "PS"
+            database = FirebaseDatabase.getInstance().getReference("Balanço Energetico Dados")
+            val dados = dataPreparacaosolo(
+                toDoubleMaoDeObra,
+                toDoubleOleoDissel,
+                toDoubleLubrificante,
+                toDoubleTrator,
+                toDoubleGraxa,
+                toDoubleSemeadora,
+                toDoublePulverizador,
+                toDoubleGradagem
+            )
+            database.child(preparacaosolo).setValue(dados).addOnSuccessListener {}
 
             database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
-            val User = dataPreparacaosolo(rounded1, rounded2, rounded3, rounded4)
+            val User = dataPreparacaosolo(
+                rounded1,
+                rounded2,
+                rounded3,
+                rounded4,
+                rounded5,
+                rounded6,
+                rounded7,
+                rounded8
+            )
             database.child(preparacaosolo).setValue(User).addOnSuccessListener {
 
                 binding.maobra.text.clear()
                 binding.oleodissel.text.clear()
                 binding.lubrificante.text.clear()
                 binding.trator.text.clear()
+                binding.graxa.text.clear()
+                binding.semeadora.text.clear()
+                binding.pulverizador.text.clear()
+                binding.gradagem.text.clear()
 
 
                 Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()

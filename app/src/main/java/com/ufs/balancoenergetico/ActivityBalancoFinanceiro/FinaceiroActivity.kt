@@ -20,7 +20,7 @@ class FinaceiroActivity : AppCompatActivity() {
 
 
         binding!!.btnSaveFinaceiro.setOnClickListener {
-            startActivity(Intent(this, BalancoFinanceiroActivity::class.java))
+            startActivity(Intent(this, BalancoFinanceiroMainActivity::class.java))
         }
         readfinanceiro()
         readtotalfinanceiro()
@@ -45,7 +45,7 @@ class FinaceiroActivity : AppCompatActivity() {
                 val herbicida = it.child("herbicida").value
                 val inseticidas = it.child("inseticida").value
 
-                binding?.textViewFertilizante?.text = ("$fungicida").toString()
+                binding?.textViewFertilizanteAzotado?.text = ("$fungicida").toString()
                 binding?.textViewInseticidas?.text = ("$herbicida").toString()
                 binding?.textViewPesticidas?.text = ("$inseticidas").toString()
 

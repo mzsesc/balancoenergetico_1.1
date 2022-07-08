@@ -51,6 +51,14 @@ class SemeioeAdubacaoActivity : AppCompatActivity() {
 
 
             val semeioeAdubacao = "SA"
+            database = FirebaseDatabase.getInstance().getReference("Balanço Energetico Dados")
+            val dados = datasemeioadubacao(
+                toDoubleTipoDeSemente,
+                toDoubleFertilizanteNitogenado,
+                toDoubleFertilizantePotassico,
+                toDoubleFertilizanteFosfatado
+            )
+            database.child(semeioeAdubacao).setValue(dados).addOnSuccessListener {}
 
             database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
             val User = datasemeioadubacao(

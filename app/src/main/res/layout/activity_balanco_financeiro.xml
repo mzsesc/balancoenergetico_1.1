@@ -211,6 +211,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/colhedora" />
 
+        <EditText
+            android:id="@+id/finaceiro_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Produção do Milho"
+            android:digits="1234567890,."
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ensiladeira"
+            />
+
 
         <Button
             android:id="@+id/button"
@@ -222,7 +237,7 @@
             android:text="Salva Dados"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ensiladeira"/>
+            app:layout_constraintTop_toBottomOf="@+id/finaceiro_total"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

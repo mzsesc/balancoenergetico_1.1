@@ -7,7 +7,7 @@
     tools:context=".ActivitysBalancoEnergertico.ColheitaActivity">
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/colheita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -30,22 +30,7 @@
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-    <EditText
-        android:id="@+id/textView21"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:digits="1234567890,."
-        android:inputType="numberDecimal"
-        android:hint="ENSILADEIRA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/maodeobra" />
-
+        app:layout_constraintTop_toBottomOf="@+id/colheita" />
     <EditText
         android:id="@+id/maodeobra"
         android:layout_width="0dp"
@@ -60,8 +45,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/colhedora" />
 
+    <EditText
+        android:id="@+id/ensiladeira"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:digits="1234567890,."
+        android:inputType="numberDecimal"
+        android:hint="ENSILADEIRA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maodeobra" />
+
+    <EditText
+        android:id="@+id/transporte_forragem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:digits="1234567890,."
+        android:inputType="numberDecimal"
+        android:hint="TRANSPORTE FORRAGEM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ensiladeira" />
+
+
+
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/salve_dados"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -70,6 +85,6 @@
         android:text="Salva Dados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        app:layout_constraintTop_toBottomOf="@+id/transporte_forragem" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

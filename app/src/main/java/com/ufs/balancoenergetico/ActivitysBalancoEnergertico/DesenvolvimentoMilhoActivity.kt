@@ -42,11 +42,20 @@ class DesenvolvimentoMilhoActivity : AppCompatActivity() {
             val rounded3 = df.format(CalHerbicida).toDouble()
 
 
-
             val desenvolvimento = "DM"
 
+            database = FirebaseDatabase.getInstance().getReference("Balanço Energetico Dados")
+            val dados = datacrescimentomilho(
+                toDoubleFungicida,
+                toDoubleInseticida,
+                toDoubleHerbicida)
+            database.child(desenvolvimento).setValue(dados).addOnSuccessListener {}
+
             database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
-            val User = datacrescimentomilho(rounded1, rounded2, rounded3)
+            val User = datacrescimentomilho(
+                rounded1,
+                rounded2,
+                rounded3)
             database.child(desenvolvimento).setValue(User).addOnSuccessListener {
 
                 binding.fungicida.text.clear()
@@ -61,6 +70,7 @@ class DesenvolvimentoMilhoActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
             }
+
             intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()

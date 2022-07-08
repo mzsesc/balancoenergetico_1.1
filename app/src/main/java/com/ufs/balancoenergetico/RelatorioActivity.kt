@@ -20,7 +20,7 @@ class RelatorioActivity : AppCompatActivity() {
         val BE = 33
 
         val textRelatorio: String =
-            "Voce inseriu em sua lavraoura um valor energetico  de $input, e produziu um valor energetico de $output," +
+            "Voce inseriu em sua lavaoura um valor energetico  de $input, e produziu um valor energetico de $output," +
                     " realizando o balanço energetico voce obteve um valor de $BE."
 
 

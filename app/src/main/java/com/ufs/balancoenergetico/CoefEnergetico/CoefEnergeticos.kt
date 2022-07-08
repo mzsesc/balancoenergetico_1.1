@@ -11,3 +11,4 @@ val CfInceticida: Double = 301.68
 val CfMaoDeObra: Double = 1.20
 val CfMaquinasAgricolas: Double = 90.69
 val CfTiposDeSemente: Double = 33.22
+val Cfgraxa: Double = 43.36

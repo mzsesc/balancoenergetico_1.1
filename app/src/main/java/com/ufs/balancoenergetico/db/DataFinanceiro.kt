@@ -14,6 +14,6 @@ class DataFinanceiro (
     val herbicida: Double? = null,
     val inseticida: Double? = null,
     val colheitadera: Double? = null,
-    val ensiladeira: Double? = null
-
+    val ensiladeira: Double? = null,
+    val milho: Double? = null
 )

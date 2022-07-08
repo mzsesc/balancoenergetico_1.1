@@ -5,8 +5,13 @@ data class dataPreparacaosolo(
     val oleodissel: Double? = null,
     val lubrificante: Double? = null,
     val maodeobra: Double? = null,
-    val trator: Double? = null
-)
+    val trator: Double? = null,
+    val graxa: Double? = null,
+    val semeadora: Double? = null,
+    val pulverizador: Double? = null,
+    val gradagem: Double? = null,
+
+    )
 
 data class datasemeioadubacao(
     val tipodesemente: Double? = null,
@@ -24,11 +29,14 @@ data class datacrescimentomilho(
 data class datacolheita(
     val colheitadera: Double? = null,
     val maodeobra: Double? = null,
-    val ensiladeira: Double? = null
+    val ensiladeira: Double? = null,
+    val transporteforagem: Double? = null
 )
 
 data class Datamilho(
     val produçaodomilho:Double? = null,
+    val grao:Double? = null,
+    val silagem:Double? = null,
 )
 
 data class DataUsuario(

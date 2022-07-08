@@ -39,7 +39,7 @@ class ColheitaActivity : AppCompatActivity() {
         auth = Firebase.auth
 
 
-        binding.button7.setOnClickListener {
+        binding.salveDados.setOnClickListener {
             when {
                 TextUtils.isEmpty(binding.colhedora.text.toString()) -> {
                     val txt = findViewById<EditText>(R.id.colhedora)
@@ -49,7 +49,7 @@ class ColheitaActivity : AppCompatActivity() {
                     val txt1 = findViewById<EditText>(R.id.colhedora)
                     txt1.setText("0")
                 }
-                TextUtils.isEmpty(binding.textView21.text) -> {
+                TextUtils.isEmpty(binding.transporteForragem.text) -> {
                     val txt2 = findViewById<EditText>(R.id.colhedora)
                     txt2.setText("0")
                 }
@@ -67,21 +67,39 @@ class ColheitaActivity : AppCompatActivity() {
                     val rounded2 = df.format(CalMaoDeObra).toDouble()
 
 
-                    val ensiladeira = binding.textView21.text.toString()
+                    val ensiladeira = binding.transporteForragem.text.toString()
                     val toDoubleEnsilhadeira = ensiladeira.toDouble()
                     val CalEnsilhadeira = (toDoubleEnsilhadeira * CfMaquinasAgricolas)
                     val rounded3 = df.format(CalEnsilhadeira).toDouble()
 
+                    val forragem = binding.transporteForragem.text.toString()
+                    val toDoubleForragem = forragem.toDouble()
+                    val CalForragem = (toDoubleForragem * CfMaquinasAgricolas)
+                    val rounded4 = df.format( CalForragem).toDouble()
+
                     val colheita = "CH"
 
+                    database = FirebaseDatabase.getInstance().getReference("Balanço Energetico Dados")
+                    val dados = datacolheita(
+                        toDoubleColheitadeira,
+                        toDoubleMaoDeObra,
+                        toDoubleEnsilhadeira,
+                        toDoubleForragem                    )
+                    database.child(colheita).setValue(dados).addOnSuccessListener {}
 
                     database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
-                    val User = datacolheita(rounded1, rounded2, rounded3)
+                    val User = datacolheita(
+                        rounded1,
+                        rounded2,
+                        rounded3,
+                        rounded4)
                     database.child(colheita).setValue(User).addOnSuccessListener {
 
                         binding.colhedora.text.clear()
                         binding.maodeobra.text.clear()
-                        binding.textView21.text.clear()
+                        binding.ensiladeira.text.clear()
+                        binding.transporteForragem.text.clear()
+
 
                         Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()
 
@@ -89,6 +107,8 @@ class ColheitaActivity : AppCompatActivity() {
 
                         Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
                     }
+
+
                     intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()
