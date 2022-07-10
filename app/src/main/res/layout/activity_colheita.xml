@@ -29,33 +29,35 @@
         android:hint="COLHEDORA"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/colheita" />
-    <EditText
-        android:id="@+id/maodeobra"
-        android:layout_width="0dp"
-        android:layout_height="62dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <Button
+        android:id="@+id/salve_dados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
-        android:hint="MÃO DE OBRA"
-        android:digits="1234567890,."
-        android:inputType="numberDecimal"
+        android:text="Salva Dados"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/colhedora" />
+        app:layout_constraintTop_toBottomOf="@+id/transporte_forragem" />
 
     <EditText
         android:id="@+id/ensiladeira"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:digits="1234567890,."
-        android:inputType="numberDecimal"
         android:hint="ENSILADEIRA"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/maodeobra" />
 
@@ -64,27 +66,42 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:digits="1234567890,."
-        android:inputType="numberDecimal"
         android:hint="TRANSPORTE FORRAGEM"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ensiladeira" />
 
-
-
-    <Button
-        android:id="@+id/salve_dados"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/maodeobra"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:text="Salva Dados"
+        android:digits="1234567890,."
+        android:hint="MÃO DE OBRA"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colhedora" />
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Atenção: Se não possuir os dados, insirar o valor 0 e ao inserir os dados user ponto no lugar da virgula."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transporte_forragem" />
+        app:layout_constraintTop_toBottomOf="@+id/colheita" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

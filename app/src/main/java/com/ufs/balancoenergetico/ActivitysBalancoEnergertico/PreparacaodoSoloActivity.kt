@@ -32,12 +32,10 @@ class PreparacaodoSoloActivity : AppCompatActivity() {
             val CalMaoDeObra = (toDoubleMaoDeObra * CfMaoDeObra)
             val rounded1 = df.format(CalMaoDeObra).toDouble()
 
-
             val oleodissel = binding.oleodissel.text.toString()
             val toDoubleOleoDissel = oleodissel.toDouble()
             val CalOleoDissel = (toDoubleOleoDissel * CfCombustivel)
             val rounded2 = df.format(CalOleoDissel).toDouble()
-
 
             val lubrificante = binding.lubrificante.text.toString()
             val toDoubleLubrificante = lubrificante.toDouble()
@@ -52,7 +50,7 @@ class PreparacaodoSoloActivity : AppCompatActivity() {
 
             val graxa = binding.graxa.text.toString()
             val toDoubleGraxa = graxa.toDouble()
-            val CalGraxa = (toDoubleGraxa * Cfgraxa)
+            val CalGraxa = (toDoubleGraxa * CfGraxa)
             val rounded5 = df.format(CalGraxa).toDouble()
 
             val semeadora = binding.semeadora.text.toString()
@@ -74,9 +72,9 @@ class PreparacaodoSoloActivity : AppCompatActivity() {
             val preparacaosolo = "PS"
             database = FirebaseDatabase.getInstance().getReference("Balanço Energetico Dados")
             val dados = dataPreparacaosolo(
-                toDoubleMaoDeObra,
                 toDoubleOleoDissel,
                 toDoubleLubrificante,
+                toDoubleMaoDeObra,
                 toDoubleTrator,
                 toDoubleGraxa,
                 toDoubleSemeadora,

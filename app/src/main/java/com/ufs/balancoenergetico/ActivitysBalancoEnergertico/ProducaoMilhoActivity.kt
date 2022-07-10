@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.ufs.balancoenergetico.CfSilagem
 import com.ufs.balancoenergetico.CfTiposDeSemente
 import com.ufs.balancoenergetico.MainActivity
 import com.ufs.balancoenergetico.databinding.ActivityProducaoMilhoBinding
@@ -37,7 +38,7 @@ class ProducaoMilhoActivity : AppCompatActivity() {
 
             val silagem = binding!!.silagem.text.toString()
             val DoubleSilagem = silagem.toDouble()
-            val CalSilagem = (DoubleSilagem * CfTiposDeSemente)
+            val CalSilagem = (DoubleSilagem * CfSilagem)
             val rounded3 = df.format(CalSilagem).toDouble()
 
 

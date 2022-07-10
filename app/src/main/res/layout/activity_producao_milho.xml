@@ -19,6 +19,31 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/grao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:digits="1234567890,."
+        android:hint="GRÃO"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/producao_milho" />
+
+    <Button
+        android:id="@+id/salve_dados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Salvar Dados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/silagem" />
+
+    <EditText
         android:id="@+id/producao_milho"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -29,43 +54,35 @@
         android:hint="PRODUÇÃO DO MILHO"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textproducaodomilho" />
-    <EditText
-        android:id="@+id/grao"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:digits="1234567890,."
-        android:hint="GRÃO"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/producao_milho" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
     <EditText
         android:id="@+id/silagem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:digits="1234567890,."
         android:hint="SILAGEM"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/grao" />
 
-    <Button
-        android:id="@+id/salve_dados"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Salvar Dados"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Atenção: Se não possuir os dados, insirar o valor 0 e ao inserir os dados user ponto no lugar da virgula."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/silagem" />
+        app:layout_constraintTop_toBottomOf="@+id/textproducaodomilho" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

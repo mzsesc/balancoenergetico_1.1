@@ -172,9 +172,11 @@ class MainBalancoEnergeticoActivity : AppCompatActivity() {
                         val colheitadera = it.child("colheitadera").value.toString()
                         val ensiladeira = it.child("ensiladeira").value.toString()
                         val maodeobra = it.child("maodeobra").value.toString()
+                        val transpoteforragem = it.child("transporteforagem").value.toString()
                         val CH = colheitadera.toDouble()
                         val SA = ensiladeira.toDouble()
                         val MO = maodeobra.toDouble()
+                        val TF = transpoteforragem.toDouble()
 
                         if (it.exists()) {
                             db.child("DM").get().addOnSuccessListener { it ->
@@ -209,20 +211,30 @@ class MainBalancoEnergeticoActivity : AppCompatActivity() {
                                             db.child("PS").get().addOnSuccessListener { it ->
 
                                                 if (it.exists()) {
-                                                    val oleodissel =
-                                                        it.child("lubrificante").value.toString()
-                                                    val lubrificante =
-                                                        it.child("oleodissel").value.toString()
+                                                    val oleodissel = it.child("lubrificante").value.toString()
+                                                    val lubrificante = it.child("oleodissel").value.toString()
+                                                    val gradagem = it.child("gradagem").value.toString()
+                                                    val graxa = it.child("graxa").value.toString()
+                                                    val pulverizador = it.child("pulverizador").value.toString()
+                                                    val semeadora = it.child("semeadora").value.toString()
                                                     val trator = it.child("trator").value.toString()
+                                                    val maodeobra = it.child("maodeobra").value.toString()
+
+
 
                                                     val OD = oleodissel.toDouble()
                                                     val LB = lubrificante.toDouble()
+                                                    val GD = gradagem.toDouble()
+                                                    val GX = graxa.toDouble()
+                                                    val SD = semeadora.toDouble()
+                                                    val PV = pulverizador.toDouble()
                                                     val TT = trator.toDouble()
+                                                    val MDB = maodeobra.toDouble()
+
 
 
                                                     val soma =
-                                                        CH + SA + MO + HC + IT  + FC + TS +
-                                                                FTA + FTP + FTF + OD + LB + TT
+                                                        CH + MDB + SA + MO + TF + HC + IT  + FC + TS + FTA + FTP + FTF + OD + LB + GD + GX + SD + PV + TT
                                                     val sm = soma
                                                     val rounded = df.format(sm).toDouble()
 

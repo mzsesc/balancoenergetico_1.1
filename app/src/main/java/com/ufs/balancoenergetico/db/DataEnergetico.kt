@@ -2,9 +2,9 @@ package com.ufs.balancoenergetico.db
 
 
 data class dataPreparacaosolo(
+    val maodeobra: Double? = null,
     val oleodissel: Double? = null,
     val lubrificante: Double? = null,
-    val maodeobra: Double? = null,
     val trator: Double? = null,
     val graxa: Double? = null,
     val semeadora: Double? = null,
