@@ -4,88 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivitysBalancoEnergertico.ProducaoMilhoActivity">
+    tools:context=".ActivityBalancoFinanceiro.InputDadosSaidaFinanceiroActivity">
 
-    <TextView
-        android:id="@+id/textproducaodomilho"
-        android:layout_width="wrap_content"
+
+    <EditText
+        android:id="@+id/finaceiro_semente"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:text="PRODUÇÃO DO MILHO"
-        android:textSize="20sp"
-
+        android:layout_marginEnd="8dp"
+        android:textSize="14sp"
+        android:digits="1234567890,."
+        android:hint="Semente"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/grao"
+        android:id="@+id/finaceiro_grao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:digits="1234567890,."
+        android:hint="Grão"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/finaceiro_semente" />
+
+    <EditText
+        android:id="@+id/finaceiro_silagem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:textSize="14sp"
         android:digits="1234567890,."
-        android:hint="GRÃO"
+        android:hint="Silagem"
         android:inputType="numberDecimal"
-        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/producao_milho" />
+        app:layout_constraintTop_toBottomOf="@+id/finaceiro_grao" />
 
     <Button
-        android:id="@+id/salve_dados"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Salvar Dados"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/silagem" />
-
-    <EditText
-        android:id="@+id/producao_milho"
-        android:layout_width="0dp"
+        android:id="@+id/button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:digits="1234567890,."
-        android:hint="PRODUÇÃO DO MILHO"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
+        android:text="Salva Dados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <EditText
-        android:id="@+id/silagem"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:digits="1234567890,."
-        android:hint="SILAGEM"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grao" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="Atenção: Se não possuir os dados, insirar o valor 0 e ao inserir os dados user ponto no lugar da virgula."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textproducaodomilho" />
+        app:layout_constraintTop_toBottomOf="@+id/finaceiro_silagem" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

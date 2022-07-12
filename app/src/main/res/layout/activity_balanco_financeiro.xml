@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityBalancoFinanceiro.BalancoFinanceiroActivity"
     android:padding="2dp"
-    android:paddingBottom="16dp"
     android:paddingStart="8dp"
+    android:paddingTop="16dp"
     android:paddingEnd="8dp"
-    android:paddingTop="16dp">
+    android:paddingBottom="16dp"
+    tools:context=".ActivityBalancoFinanceiro.BalancoFinanceiroActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -36,7 +36,9 @@
             android:digits="1234567890,."
             android:hint="MÃO DE OBRA"
             android:inputType="numberDecimal"
-            android:textSize="18sp"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textView_balanco_finaceiro" />
@@ -51,6 +53,7 @@
             android:digits="1234567890,."
             android:hint="ÓLEO DIESEL"
             android:inputType="numberDecimal"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/maobra" />
@@ -65,6 +68,7 @@
             android:digits="1234567890,."
             android:hint="LUBRIFICANTE"
             android:inputType="numberDecimal"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/oleodissel" />
@@ -79,6 +83,7 @@
             android:digits="1234567890,."
             android:hint="TRATOR"
             android:inputType="numberDecimal"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lubrificante" />
@@ -93,6 +98,7 @@
             android:digits="1234567890,."
             android:hint="SEMENTE"
             android:inputType="numberDecimal"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/trator" />
@@ -104,6 +110,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:textSize="14sp"
             android:digits="1234567890,."
             android:hint="FERTILIZANTES POTÁSSICO"
             android:inputType="numberDecimal"
@@ -120,6 +127,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:digits="1234567890,."
+            android:textSize="14sp"
             android:hint="FERTILIZANTE NITROGENADO"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,6 +141,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:textSize="14sp"
             android:digits="1234567890,."
             android:hint="FERTILIZANTE FOSFATADOS"
             android:inputType="numberDecimal"
@@ -149,6 +158,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:digits="1234567890,."
+            android:textSize="14sp"
             android:hint="FUNGICIDA"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -163,6 +173,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:digits="1234567890,."
+            android:textSize="14sp"
             android:hint="INSETICIDAS"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -177,6 +188,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:digits="1234567890,."
+            android:textSize="14sp"
             android:hint="HERBICIDAS"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -189,6 +201,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
+            android:textSize="14sp"
             android:layout_marginEnd="8dp"
             android:digits="1234567890,."
             android:hint="COLHEDORA"
@@ -205,6 +218,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:digits="1234567890,."
+            android:textSize="14sp"
             android:hint="ENSILADEIRA"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -212,19 +226,79 @@
             app:layout_constraintTop_toBottomOf="@+id/colhedora" />
 
         <EditText
-            android:id="@+id/finaceiro_total"
+            android:id="@+id/graxa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp"
+            android:digits="1234567890,."
+            android:hint="GRAXA"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ensiladeira" />
+
+        <EditText
+            android:id="@+id/semeadora"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:digits="1234567890,."
+            android:hint="SEMEADORA"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/graxa" />
+
+        <EditText
+            android:id="@+id/pulverizador"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
-            android:hint="Produção do Milho"
             android:digits="1234567890,."
+            android:textSize="14sp"
+            android:hint="PULVERIZADOR"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ensiladeira"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/semeadora" />
+
+        <EditText
+            android:id="@+id/gradagem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:digits="1234567890,."
+            android:textSize="14sp"
+            android:hint="GRADAGEM"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pulverizador" />
+
+        <EditText
+            android:id="@+id/transporteforagem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:digits="1234567890,."
+            android:hint="TRASPORTE DE FORRAGEM"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gradagem" />
 
 
         <Button
@@ -232,18 +306,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:text="Salva Dados"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/finaceiro_total"/>
+            app:layout_constraintTop_toBottomOf="@+id/transporteforagem" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
 </ScrollView>

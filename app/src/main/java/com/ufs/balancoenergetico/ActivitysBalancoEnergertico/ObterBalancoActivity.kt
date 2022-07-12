@@ -28,8 +28,6 @@ class ObterBalancoActivity : AppCompatActivity() {
 
         binding?.button9?.setOnClickListener {
             CalBalancoEnegetico()
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
         }
 
 

@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
+import com.ufs.balancoenergetico.ActivityBalancoFinanceiro.EntradaeSaindaFinanceiroActivity
 import com.ufs.balancoenergetico.ActivityBalancoFinanceiro.FinaceiroActivity
 import com.ufs.balancoenergetico.ActivitysBalancoEnergertico.MainBalancoEnergeticoActivity
 import com.ufs.balancoenergetico.databinding.ActivityMainBinding
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null
     private lateinit var auth: FirebaseAuth
     private lateinit var db: DatabaseReference
-    val df = DecimalFormat("#.#", DecimalFormatSymbols(Locale.ENGLISH))
+   // val df = DecimalFormat("#.#", DecimalFormatSymbols(Locale.ENGLISH))
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,9 +34,9 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         updateUI()
-        readDataSoma()
-        readDataProdMilho()
-        readDataEE()
+        //readDataSoma()
+        //readDataProdMilho()
+        //readDataEE()
 
 
 
@@ -45,13 +46,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding!!.button5.setOnClickListener {
-            startActivity(Intent(this, MainBalancoEnergeticoActivity::class.java))
+            startActivity(Intent(this, MainActivity2::class.java))
 
         }
 
         binding!!.Financeiro.setOnClickListener {
 
-            startActivity(Intent(this, FinaceiroActivity::class.java))
+            startActivity(Intent(this, EntradaeSaindaFinanceiroActivity::class.java))
         }
 
         binding!!.button6.setOnClickListener {
@@ -84,7 +85,7 @@ class MainActivity : AppCompatActivity() {
  */
     }
 
-
+/***
     private fun readDataSoma() {
         db = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
         db.get().addOnSuccessListener {
@@ -129,6 +130,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+***/
 
 
 

@@ -50,6 +50,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_oleo_dissel"
@@ -77,6 +84,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_lubrificante"
@@ -104,6 +118,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_graxa"
@@ -174,6 +195,13 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_fertilizante_azotado"
@@ -201,6 +229,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_fertilizante_potassico"
@@ -228,6 +263,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_fertilizante_fosfatato"
@@ -271,6 +313,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_herbicida"
@@ -298,6 +347,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_inseticidas"
@@ -325,9 +381,16 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/text_view_pesticidas"
+                    android:id="@+id/text_view_fungicida"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -367,6 +430,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_trator"
@@ -394,6 +464,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_semeadora"
@@ -420,6 +497,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_pulverizador"
@@ -446,6 +530,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_trasporte_forragem"
@@ -473,6 +564,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_gradagem"
@@ -500,6 +598,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_colheitadeira"
@@ -527,6 +632,13 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_ensiladeira"
@@ -554,108 +666,16 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="R$ "
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_mao_de_obra"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="0.0"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/browser_actions_divider_color"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15">
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Semente:"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/text_view_sementes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="0.0"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Grão:"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/text_view_graos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="0.0"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Silagem:"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/text_view_silagem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -674,12 +694,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
 
             <LinearLayout
@@ -696,6 +716,7 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -703,6 +724,7 @@
                     android:text="R$ "
                     android:textColor="@color/black"
                     android:textSize="20sp" />
+
                 <TextView
                     android:id="@+id/text_view_total_energetico"
                     android:layout_width="wrap_content"
@@ -728,6 +750,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 
+
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
@@ -742,19 +765,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView_balanco_finaceiro" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Dadosde Saida"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.08"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

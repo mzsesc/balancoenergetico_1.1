@@ -44,18 +44,7 @@ class BalancoEnergeticoActivity : AppCompatActivity() {
 
         }
 
-        binding!!.button20.setOnClickListener {
-            startActivity(Intent(this, ProducaoMilhoActivity::class.java))
-            onBackPressed()
 
-        }
-
-        binding!!.button21.setOnClickListener {
-
-            startActivity(Intent(this, ObterBalancoActivity::class.java))
-            onBackPressed()
-
-        }
 
 
     }

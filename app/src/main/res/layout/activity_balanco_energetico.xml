@@ -71,38 +71,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button18" />
 
-        <Button
-            android:id="@+id/button20"
-            android:layout_width="0dp"
-            android:layout_height="125dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:backgroundTint="@color/white"
-            android:text="Produção do Milho"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button19" />
-
-        <Button
-            android:id="@+id/button21"
-            android:layout_width="0dp"
-            android:layout_height="125dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
-            android:backgroundTint="@color/white"
-            android:text="Obter Balanço Energético"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button20" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

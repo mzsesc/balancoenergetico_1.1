@@ -77,7 +77,7 @@ class MainBalancoEnergeticoActivity : AppCompatActivity() {
 
                 binding?.textViewHerbicida?.text = ("$rounded1 kg").toString()
                 binding?.textViewInseticidas?.text = ("$rounded2 kg").toString()
-                binding?.textViewPesticidas?.text = ("$rounded3 kg").toString()
+                binding?.textViewFungicida?.text = ("$rounded3 kg").toString()
 
             }
 
@@ -138,25 +138,6 @@ class MainBalancoEnergeticoActivity : AppCompatActivity() {
             }
         }
 
-        db = FirebaseDatabase.getInstance().getReference("Produção do Milho Dados")
-        db.get().addOnSuccessListener {
-            if (it.exists()) {
-
-                val grao = it.child("grao").value
-                val rounded1 = df.format(grao).toDouble()
-
-                val produçaodomilho = it.child("produçaodomilho").value
-                val rounded2 = df.format(produçaodomilho).toDouble()
-
-                val silagem = it.child("silagem").value
-                val rounded3 = df.format(silagem).toDouble()
-
-                binding?.textViewGraos?.text = ("$rounded1 kg").toString()
-                binding?.textViewSementes?.text = ("$rounded2 kg").toString()
-                binding?.textViewSilagem?.text = ("$rounded3 kg").toString()
-
-            }
-        }
     }
 
 

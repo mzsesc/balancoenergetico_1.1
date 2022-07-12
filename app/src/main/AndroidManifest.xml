@@ -14,6 +14,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Balancoenergetico">
         <activity
+            android:name=".ActivitysBalancoEnergertico.InputProducaoMilhoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityBalancoFinanceiro.InputDadosSaidaFinanceiroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityBalancoFinanceiro.DadosSaindaFincanceiroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityBalancoFinanceiro.EntradaeSaindaFinanceiroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityBalancoFinanceiro.EntradaeSaindaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivitysBalancoEnergertico.DadoSaidaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".ActivityBalancoFinanceiro.ObterBalancoFinanceiroActivity"
             android:exported="false" />
         <activity

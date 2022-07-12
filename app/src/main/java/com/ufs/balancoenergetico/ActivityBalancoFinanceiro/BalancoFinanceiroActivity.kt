@@ -72,13 +72,29 @@ class BalancoFinanceiroActivity : AppCompatActivity() {
         val ensiladeira = binding!!.ensiladeira.text.toString()
         val el = ensiladeira.toDouble()
 
-        val milho = binding!!.ensiladeira.text.toString()
-        val ml = milho.toDouble()
+        val graxa = binding!!.graxa.text.toString()
+        val gx = graxa.toDouble()
+
+        val semeadora = binding!!.semeadora.text.toString()
+        val sd = semeadora.toDouble()
+
+        val pulverizador = binding!!.pulverizador.text.toString()
+        val pv = pulverizador.toDouble()
+
+        val gradagem = binding!!.gradagem.text.toString()
+        val gd = gradagem.toDouble()
+
+        val transporteforagem = binding!!.transporteforagem.text.toString()
+        val tf = transporteforagem.toDouble()
+
+
+
+
 
 
 
         database = FirebaseDatabase.getInstance().getReference("Balanço Financeiro")
-        val financeiro = DataFinanceiro(od, lb, mb, tt, st, fn, fp, ff, fg, hb, it, cd, el,ml)
+        val financeiro = DataFinanceiro(od, lb, mb, tt, st, fn, fp, ff, fg, hb, it, cd, el,gx,sd,pv,gd,tf)
         database.child("Financeiro").setValue(financeiro).addOnSuccessListener {
 
             binding!!.oleodissel.text.clear()
@@ -94,7 +110,6 @@ class BalancoFinanceiroActivity : AppCompatActivity() {
             binding!!.inseticida.text.clear()
             binding!!.colhedora.text.clear()
             binding!!.ensiladeira.text.clear()
-            binding!!.finaceiroTotal.text.clear()
 
         }
 
