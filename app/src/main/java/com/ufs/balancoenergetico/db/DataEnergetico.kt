@@ -10,7 +10,16 @@ data class dataPreparacaosolo(
     val semeadora: Double? = null,
     val pulverizador: Double? = null,
     val gradagem: Double? = null,
-
+    val colheitadera: Double? = null,
+    val ensiladeira: Double? = null,
+    val transporteforagem: Double? = null,
+    val fungicida: Double? = null,
+    val herbicida: Double? = null,
+    val inseticida: Double? = null,
+    val tipodesemente: Double? = null,
+    val fertilizanteazotado: Double? = null,
+    val fertilizantepotassico: Double? = null,
+    val fertilizantefosfatado: Double? = null
     )
 
 data class datasemeioadubacao(

@@ -18,11 +18,7 @@ class RelatorioActivity : AppCompatActivity() {
         val input = 11
         val output = 22
         val BE = 33
-
-        val textRelatorio: String =
-            "Voce inseriu em sua lavaoura um valor energetico  de $input, e produziu um valor energetico de $output," +
-                    " realizando o balanço energetico voce obteve um valor de $BE."
-
+        var textRelatorio = getString(R.string.Relatorio, input,output,BE)
 
         binding!!.textView5.text = textRelatorio
     }

@@ -8,6 +8,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.ufs.balancoenergetico.CfSilagem
 import com.ufs.balancoenergetico.CfTiposDeSemente
 import com.ufs.balancoenergetico.MainActivity
+import com.ufs.balancoenergetico.MainActivity2
 import com.ufs.balancoenergetico.databinding.ActivityProducaoMilhoBinding
 import com.ufs.balancoenergetico.db.Datamilho
 import java.text.DecimalFormat
@@ -26,48 +27,54 @@ class ProducaoMilhoActivity : AppCompatActivity() {
         setContentView(binding!!.root)
 
         binding!!.salveDados.setOnClickListener {
-            val prodmilho = binding!!.producaoMilho.text.toString()
-            val Doubleprodmilho = prodmilho.toDouble()
-            val CalProdMilho = (Doubleprodmilho * CfTiposDeSemente)
-            val rounded1 = df.format(CalProdMilho).toDouble()
-
-            val grao = binding!!.grao.text.toString()
-            val DoubleGrao = grao.toDouble()
-            val CalGrao = (DoubleGrao * CfTiposDeSemente)
-            val rounde2 = df.format(CalGrao).toDouble()
-
-            val silagem = binding!!.silagem.text.toString()
-            val DoubleSilagem = silagem.toDouble()
-            val CalSilagem = (DoubleSilagem * CfSilagem)
-            val rounded3 = df.format(CalSilagem).toDouble()
-
-
-
-            database = FirebaseDatabase.getInstance().getReference("Produção do Milho Dados")
-            val dados = Datamilho(
-                Doubleprodmilho,
-                DoubleGrao,
-                DoubleSilagem
-            )
-            database.setValue(dados).addOnSuccessListener {}
-
-            database = FirebaseDatabase.getInstance().getReference("Produção do Milho")
-            val promilho = Datamilho(
-                rounded1,
-                rounde2,
-                rounded3
-            )
-            database.setValue(promilho).addOnSuccessListener {
-
-
-                binding!!.producaoMilho.text.clear()
-                binding!!.grao.text.clear()
-                binding!!.silagem.text.clear()
-            }
-            intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            saveDados()
         }
+
+
+    }
+
+    fun saveDados() {
+        val prodmilho = binding!!.producaoMilho.text.toString()
+        val Doubleprodmilho = prodmilho.toDouble()
+        val CalProdMilho = (Doubleprodmilho * CfTiposDeSemente)
+        val rounded1 = df.format(CalProdMilho).toDouble()
+
+        val grao = binding!!.grao.text.toString()
+        val DoubleGrao = grao.toDouble()
+        val CalGrao = (DoubleGrao * CfTiposDeSemente)
+        val rounde2 = df.format(CalGrao).toDouble()
+
+        val silagem = binding!!.silagem.text.toString()
+        val DoubleSilagem = silagem.toDouble()
+        val CalSilagem = (DoubleSilagem * CfSilagem)
+        val rounded3 = df.format(CalSilagem).toDouble()
+
+
+
+        database = FirebaseDatabase.getInstance().getReference("Produção do Milho Dados")
+        val dados = Datamilho(
+            Doubleprodmilho,
+            DoubleGrao,
+            DoubleSilagem
+        )
+        database.setValue(dados).addOnSuccessListener {}
+
+        database = FirebaseDatabase.getInstance().getReference("Produção do Milho")
+        val promilho = Datamilho(
+            rounded1,
+            rounde2,
+            rounded3
+        )
+        database.setValue(promilho).addOnSuccessListener {
+
+
+            binding!!.producaoMilho.text.clear()
+            binding!!.grao.text.clear()
+            binding!!.silagem.text.clear()
+        }
+        intent = Intent(this, MainActivity2::class.java)
+        startActivity(intent)
+        finish()
 
 
     }

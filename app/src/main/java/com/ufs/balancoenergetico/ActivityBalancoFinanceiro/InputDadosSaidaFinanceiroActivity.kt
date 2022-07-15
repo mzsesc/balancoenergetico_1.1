@@ -26,36 +26,39 @@ class InputDadosSaidaFinanceiroActivity : AppCompatActivity() {
         setContentView(binding!!.root)
 
         binding!!.button.setOnClickListener {
-            val prodmilho = binding!!.finaceiroSemente.text.toString()
-            val PD = prodmilho.toDouble()
-
-            val grao = binding!!.finaceiroGrao.text.toString()
-            val GR = grao.toDouble()
-
-
-            val silagem = binding!!.finaceiroSilagem.text.toString()
-            val SG = silagem.toDouble()
-
-
-
-
-            database = FirebaseDatabase.getInstance().getReference("Balanço Financeiro")
-            val dados = Datamilho(
-                PD,
-                GR,
-                SG
-            )
-            database.child("Produção do Milho").setValue(dados).addOnSuccessListener {
-
-                binding!!.finaceiroSemente.text.clear()
-                binding!!.finaceiroGrao.text.clear()
-                binding!!.finaceiroSilagem.text.clear()
-            }
-            intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            saveDados()
+            startActivity(Intent(this, EntradaeSaindaFinanceiroActivity::class.java))
             finish()
         }
 
 
     }
+     fun saveDados(){
+         val prodmilho = binding!!.finaceiroSemente.text.toString()
+         val PD = prodmilho.toDouble()
+
+         val grao = binding!!.finaceiroGrao.text.toString()
+         val GR = grao.toDouble()
+
+
+         val silagem = binding!!.finaceiroSilagem.text.toString()
+         val SG = silagem.toDouble()
+
+
+
+
+         database = FirebaseDatabase.getInstance().getReference("Balanço Financeiro")
+         val dados = Datamilho(
+             PD,
+             GR,
+             SG
+         )
+         database.child("Produção do Milho").setValue(dados).addOnSuccessListener {
+
+             binding!!.finaceiroSemente.text.clear()
+             binding!!.finaceiroGrao.text.clear()
+             binding!!.finaceiroSilagem.text.clear()
+         }
+
+     }
 }

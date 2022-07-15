@@ -6,9 +6,10 @@ import android.os.Bundle
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.ufs.balancoenergetico.databinding.ActivityFinaceiroBinding
+import java.text.DecimalFormat
 
 class FinaceiroActivity : AppCompatActivity() {
-
+    val df = DecimalFormat.getInstance()
     private var binding: ActivityFinaceiroBinding? = null
     private lateinit var db: DatabaseReference
 
@@ -34,53 +35,71 @@ class FinaceiroActivity : AppCompatActivity() {
             if (it.exists()) {
 
                 val colheitadeira = it.child("colheitadera").value
+                val rounded1 = df.format(colheitadeira)
                 val maodeobra = it.child("maodeobra").value
+                val rounded2 = df.format(maodeobra)
                 val ensilhadeira = it.child("ensiladeira").value
+                val rounded3 = df.format(ensilhadeira)
 
-                binding?.textViewColheitadeira?.text = ("$colheitadeira").toString()
-                binding?.textViewMaoDeObra?.text = ("$maodeobra").toString()
-                binding?.textViewEnsiladeira?.text = ("$ensilhadeira").toString()
+                binding?.textViewColheitadeira?.text = (rounded1)
+                binding?.textViewMaoDeObra?.text = (rounded2)
+                binding?.textViewEnsiladeira?.text = (rounded3)
 
                 val fungicida = it.child("fungicida").value
+                val rounded4 = df.format(fungicida)
                 val herbicida = it.child("herbicida").value
+                val rounded5 = df.format(herbicida)
                 val inseticidas = it.child("inseticida").value
+                val rounded6= df.format(inseticidas)
 
-                binding?.textViewFungicida?.text = ("$fungicida").toString()
-                binding?.textViewHerbicida?.text = ("$herbicida").toString()
-                binding?.textViewInseticidas?.text = ("$inseticidas").toString()
+                binding?.textViewFungicida?.text = (rounded4)
+                binding?.textViewHerbicida?.text = (rounded5)
+                binding?.textViewInseticidas?.text = (rounded6)
 
                 val oleodissel = it.child("lubrificante").value
+                val rounded7 = df.format(oleodissel)
                 val lubrificante = it.child("oleodissel").value
+                val rounded8 = df.format(lubrificante)
                 val trator = it.child("trator").value
+                val rounded9 = df.format(trator)
 
-                binding?.textViewOleoDissel?.text = ("$oleodissel").toString()
-                binding?.textViewLubrificante?.text = ("$lubrificante").toString()
-                binding?.textViewTrator?.text = ("$trator").toString()
+                binding?.textViewOleoDissel?.text = (rounded7)
+                binding?.textViewLubrificante?.text = (rounded8)
+                binding?.textViewTrator?.text = (rounded9)
 
 
                 val tiposdesemente = it.child("tipodesemente").value
+                val rounded10 = df.format(tiposdesemente)
                 val fertilizanteazotado = it.child("fertilizanteazotado").value
+                val rounded11 = df.format(fertilizanteazotado)
                 val fertilizantepotassico = it.child("fertilizantepotassico").value
+                val rounded12 = df.format(fertilizantepotassico)
                 val fertilizantefosfatado = it.child("fertilizantefosfatado").value
+                val rounded13 = df.format(fertilizantefosfatado)
 
 
-                binding?.textViewTipoDeSemente?.text = ("$tiposdesemente").toString()
-                binding?.textViewFertilizanteAzotado?.text = ("$fertilizanteazotado").toString()
-                binding?.textViewFertilizantePotassico?.text = ("$fertilizantepotassico").toString()
-                binding?.textViewFertilizanteFosfatato?.text = ("$fertilizantefosfatado").toString()
+                binding?.textViewTipoDeSemente?.text = (rounded10)
+                binding?.textViewFertilizanteAzotado?.text = (rounded11)
+                binding?.textViewFertilizantePotassico?.text = (rounded12)
+                binding?.textViewFertilizanteFosfatato?.text = (rounded13)
 
                 val graxa = it.child("graxa").value
+                val rounded14 = df.format(graxa)
                 val semeadora = it.child("semeadora").value
+                val rounded15 = df.format(semeadora)
                 val pulverizador = it.child("pulverizador").value
+                val rounded16 = df.format(pulverizador)
                 val gradagem = it.child("gradagem").value
+                val rounded17 = df.format(gradagem)
                 val transporteforagem = it.child("transporteforagem").value
+                val rounded18 = df.format(transporteforagem)
 
 
-                binding!!.textViewGraxa.text = ("$graxa").toString()
-                binding!!.textViewSemeadora.text = ("$semeadora").toString()
-                binding!!.textViewPulverizador.text = ("$pulverizador").toString()
-                binding!!.textViewGradagem.text = ("$gradagem").toString()
-                binding!!.textViewTrasporteForragem.text = ("$transporteforagem").toString()
+                binding!!.textViewGraxa.text = (rounded14)
+                binding!!.textViewSemeadora.text = (rounded15)
+                binding!!.textViewPulverizador.text = (rounded16)
+                binding!!.textViewGradagem.text = (rounded17)
+                binding!!.textViewTrasporteForragem.text = (rounded18)
 
 
             }
@@ -149,8 +168,8 @@ class FinaceiroActivity : AppCompatActivity() {
                 val soma =
                     CH + SA + MO + HC + IT + FC + TS +
                             FTA + FTP + FTF + OD + LB + TT + gx + pv + gd + tf + sd
-                val sm = ("$soma")
-                binding?.textViewTotalEnergetico?.text = sm
+                val sm2 = df.format(soma)
+                binding?.textViewTotalEnergetico?.text = sm2
                 db.child("Soma").child("SMIN").setValue(soma)
             }
 

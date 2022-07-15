@@ -16,7 +16,7 @@ class ObterBalancoActivity : AppCompatActivity() {
 
     private var binding: ActivityObterBalancoBinding? = null
     private lateinit var database: DatabaseReference
-    val df = DecimalFormat("#.###", DecimalFormatSymbols(Locale.ENGLISH))
+    val df = DecimalFormat.getInstance()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,11 +40,13 @@ class ObterBalancoActivity : AppCompatActivity() {
         database.get().addOnSuccessListener {
 
             if (it.exists()) {
-                val soma = it.child("soma").value.toString()
+                val soma = it.child("soma").value
+                val rounded1 = df.format(soma)
+                val stringsoma = soma.toString()
+                val sm = stringsoma.toDouble()
 
-               val sm = soma.toDouble()
-
-                binding?.textViewTotalEnergetico?.text = sm.toString()
+                binding?.textViewTotalEnergetico?.text = rounded1
+                binding?.salve1?.text = sm.toString()
             }
 
         }
@@ -52,11 +54,15 @@ class ObterBalancoActivity : AppCompatActivity() {
         database.get().addOnSuccessListener {
 
             if (it.exists()) {
-                val soma = it.child("produçaodomilho").value.toString()
+                val soma = it.child("produçaodomilho").value
+                val rounded1 = df.format(soma)
+                val stringsoma = soma.toString()
 
-               val sm = soma.toDouble()
+                val sm = stringsoma.toDouble()
 
-                binding?.textViewTotalEnergeticoProduzido?.text = sm.toString()
+                binding?.textViewTotalEnergeticoProduzido?.text = rounded1.toString()
+                binding?.salve2?.text = sm.toString()
+
             }
 
         }
@@ -65,18 +71,18 @@ class ObterBalancoActivity : AppCompatActivity() {
 
     fun CalBalancoEnegetico() {
 
-        val entrada = binding?.textViewTotalEnergetico?.text.toString()
+        val entrada = binding?.salve1?.text.toString()
         val doubleentrada = entrada.toDouble()
-        val saida = binding?.textViewTotalEnergeticoProduzido?.text.toString()
+        val saida = binding?.salve2?.text.toString()
         val doublesaida = saida.toDouble()
 
         if (doubleentrada != 0.0) {
             val EE = doublesaida / doubleentrada
-            val rounded1 = df.format(EE).toDouble()
+            val rounded1 = df.format(EE)
             val RE = doubleentrada / doublesaida
-            val rounded2 = df.format(RE).toDouble()
-            val BE = doublesaida - doubleentrada
-            val rounded3 = df.format(BE).toDouble()
+            val rounded2 = df.format(RE)
+            val BE = doubleentrada - doublesaida
+            val rounded3 = df.format(BE)
 
 
 
@@ -88,9 +94,9 @@ class ObterBalancoActivity : AppCompatActivity() {
                 .getReference("Eficacia Energetica,Razao Energetica,Balanco Energetico")
             database.get().addOnSuccessListener {
 
-                database.child("EE").setValue(rounded1)
-                database.child("RE").setValue(rounded2)
-                database.child("BE").setValue(rounded3)
+                database.child("EE").setValue(EE)
+                database.child("RE").setValue(RE)
+                database.child("BE").setValue(BE)
 
             }
         } else {

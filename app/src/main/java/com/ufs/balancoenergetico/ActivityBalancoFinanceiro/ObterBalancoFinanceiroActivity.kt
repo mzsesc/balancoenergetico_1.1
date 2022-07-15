@@ -6,11 +6,12 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.ufs.balancoenergetico.R
 import com.ufs.balancoenergetico.databinding.ActivityObterBalancoFinanceiroBinding
+import java.text.DecimalFormat
 
 class ObterBalancoFinanceiroActivity : AppCompatActivity() {
 
     private lateinit var db: DatabaseReference
-
+    val df = DecimalFormat.getInstance()
     private var binding: ActivityObterBalancoFinanceiroBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,16 +31,23 @@ class ObterBalancoFinanceiroActivity : AppCompatActivity() {
 
             if (it.exists()) {
 
-                val SMIN = it.child("SMIN").value.toString()
-                val input = SMIN.toDouble()
-                binding?.textViewTotalEnergetico?.text = SMIN
-                val SMOUT = it.child("SMOUT").value.toString()
-                binding?.textViewTotalEnergeticoProduzido?.text = SMOUT
-                val output = SMOUT.toDouble()
+                val SMIN = it.child("SMIN").value
+                val rounded1 = df.format(SMIN)
+                val smin = SMIN.toString()
+                val input = smin.toDouble()
+
+                binding?.textViewTotalEnergetico?.text = rounded1
+
+                val SMOUT = it.child("SMOUT").value
+                val rounded2 = df.format(SMOUT)
+                val smout = SMOUT.toString()
+
+                binding?.textViewTotalEnergeticoProduzido?.text = rounded2
+                val output = smout.toDouble()
 
                 val soma = output - input
-
-                binding?.textViewTotalEficaciaEnergetica?.text = soma.toString()
+                val rounded3 = df.format(soma)
+                binding?.textViewTotalEficaciaEnergetica?.text = rounded3.toString()
                 db.child("Soma").child("Balanço Financeiro").setValue(soma)
 
 

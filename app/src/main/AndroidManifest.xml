@@ -74,7 +74,7 @@
             android:name=".ActivitysBalancoEnergertico.SemeioeAdubacaoActivity"
             android:exported="false" />
         <activity
-            android:name=".ActivitysBalancoEnergertico.PreparacaodoSoloActivity"
+            android:name=".ActivitysBalancoEnergertico.InputDadosActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

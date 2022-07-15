@@ -24,7 +24,7 @@ class BalancoFinanceiroActivity : AppCompatActivity() {
 
         binding!!.button.setOnClickListener {
             financeiro()
-            intent = Intent(this, MainActivity::class.java)
+            intent = Intent(this, EntradaeSaindaFinanceiroActivity::class.java)
             startActivity(intent)
             finish()
 

@@ -7,7 +7,16 @@
     <string name="Cliqueaquinovaconta">Clique aqui nova conta</string>
     <string name="LogoAPP">Logo APP</string>
     <string name="no_account">Not account? <b>SingUp</b></string>
+    <string name="zero">0,0</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="Relatorio">Voce inseriu em sua lavaoura um valor energetico  de %1$d, e produziu um
+        valor energetico de %2$d, realizando o balanço energetico voce obteve um valor de %3$d.</string>
+
+    <string name="Orientação1">Ao clicar no botão energético voce será direcionado para uma tela onde primeiro irar inserir os dados entrada, e depois disso, pode inserir os dados de saída. Após essas etapas voce poderá clicar em obter balanço energético</string>
+    <string name="Orientação2">Ao clicar no botão Financeiro voce será direcionado para uma tela onde voce poderá primeiramente inserir os dados de entrada do balanço financeiro, e depois dessa etapa inserir os dados de saída, após essa etapa poderá clicar em Obter balanço Financeiro</string>
+    <string name="Orientação3">Após obter o balanço Energético e Financeiro, poderá clicar em Relatório, onde tem botão que ao clicar ira lhe informa todos os dados Resumido que já forma inseridos</string>
+    <string name="inserir_dados">Inserir Dados</string>
+    <string name="dados_de_entrada">Dados de Entrada</string>
 </resources>

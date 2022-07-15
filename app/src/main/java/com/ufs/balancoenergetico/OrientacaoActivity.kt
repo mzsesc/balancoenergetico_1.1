@@ -15,6 +15,14 @@ class OrientacaoActivity : AppCompatActivity() {
 
         setContentView(binding!!.root)
 
+        var orientacao1 = getString(R.string.Orientação1)
+        var orientacao2 = getString(R.string.Orientação2)
+        var orientacao3 = getString(R.string.Orientação3)
+
+        binding?.orientacao1?.text =orientacao1
+        binding?.orientacao2?.text =orientacao2
+        binding?.orientacao3?.text =orientacao3
+
         binding!!.button4.setOnClickListener {
             val intent = Intent(this, InitialMainActivity::class.java)
             startActivity(intent)
