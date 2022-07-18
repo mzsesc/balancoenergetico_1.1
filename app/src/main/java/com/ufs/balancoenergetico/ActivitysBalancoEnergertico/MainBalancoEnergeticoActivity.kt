@@ -58,9 +58,9 @@ class MainBalancoEnergeticoActivity : AppCompatActivity() {
                 val rounded7 = df.format(fertilizantepotassico)
                 val fertilizantefosfatado = it.child("fertilizantefosfatado").value
                 val rounded8 = df.format(fertilizantefosfatado)
-                val oleodissel = it.child("lubrificante").value
+                val oleodissel = it.child("oleodissel").value
                 val rounded9 = df.format(oleodissel)
-                val lubrificante = it.child("oleodissel").value
+                val lubrificante = it.child("lubrificante").value
                 val rounded10 = df.format(lubrificante)
                 val trator = it.child("trator").value
                 val rounded11 = df.format(trator)

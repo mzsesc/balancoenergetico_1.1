@@ -93,9 +93,9 @@
             <TextView
                 android:id="@+id/text_view_total_eficacia_energetica"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:text="@string/zero"
+                android:text="0,0 MJ"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -122,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@string/zero"
+                android:text="0,0 MJ"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -149,7 +149,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@string/zero"
+                android:text="0,0 MJ"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -191,7 +191,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Button"
+        android:text="Obter Balanço Energético"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

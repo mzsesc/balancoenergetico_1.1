@@ -22,11 +22,10 @@
             android:id="@+id/logo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#E8F5E9"
             android:contentDescription="@string/LogoAPP"
-            android:scaleType="fitStart"
+            android:scaleType="center"
             android:scrollbarSize="4dp"
-            android:src="@drawable/ic_baseline_android_24"
+            android:src="@drawable/img_balanca"
             android:visibility="visible" />
     </FrameLayout>
 

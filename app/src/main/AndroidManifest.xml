@@ -14,81 +14,78 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Balancoenergetico">
         <activity
-            android:name=".ActivitysBalancoEnergertico.InputProducaoMilhoActivity"
-            android:exported="false" />
-        <activity
             android:name=".ActivityBalancoFinanceiro.InputDadosSaidaFinanceiroActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivityBalancoFinanceiro.DadosSaindaFincanceiroActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivityBalancoFinanceiro.EntradaeSaindaFinanceiroActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityBalancoFinanceiro.EntradaeSaindaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivitysBalancoEnergertico.DadoSaidaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity2"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivityBalancoFinanceiro.ObterBalancoFinanceiroActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityBalancoFinanceiro.BalancoFinanceiroMainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RelatorioActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivitysBalancoEnergertico.ObterBalancoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivitysBalancoEnergertico.ProducaoMilhoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivityBalancoFinanceiro.BalancoFinanceiroActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".OrientacaoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivitysBalancoEnergertico.MainBalancoEnergeticoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivityBalancoFinanceiro.FinaceiroActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ActivitysBalancoEnergertico.BalancoEnergeticoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ActivitysBalancoEnergertico.ColheitaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ActivitysBalancoEnergertico.DesenvolvimentoMilhoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ActivitysBalancoEnergertico.SemeioeAdubacaoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivitysBalancoEnergertico.InputDadosActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SignUpActivity"
-            android:exported="true" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity android:name=".InitialMainActivity" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

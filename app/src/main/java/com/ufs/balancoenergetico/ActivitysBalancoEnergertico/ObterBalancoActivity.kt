@@ -1,22 +1,19 @@
 package com.ufs.balancoenergetico.ActivitysBalancoEnergertico
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.ufs.balancoenergetico.MainActivity
 import com.ufs.balancoenergetico.databinding.ActivityObterBalancoBinding
 import java.text.DecimalFormat
-import java.text.DecimalFormatSymbols
-import java.util.*
+import java.text.NumberFormat
 
 class ObterBalancoActivity : AppCompatActivity() {
 
     private var binding: ActivityObterBalancoBinding? = null
     private lateinit var database: DatabaseReference
-    val df = DecimalFormat.getInstance()
+    val df: NumberFormat = DecimalFormat.getInstance()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,13 +24,13 @@ class ObterBalancoActivity : AppCompatActivity() {
         ObterBalancoEnergetico()
 
         binding?.button9?.setOnClickListener {
-            CalBalancoEnegetico()
+            calBalancoEnegetico()
         }
 
 
     }
 
-    fun ObterBalancoEnergetico() {
+    private fun ObterBalancoEnergetico() {
 
 
         database = FirebaseDatabase.getInstance().getReference("Balanço Energetico")
@@ -45,7 +42,7 @@ class ObterBalancoActivity : AppCompatActivity() {
                 val stringsoma = soma.toString()
                 val sm = stringsoma.toDouble()
 
-                binding?.textViewTotalEnergetico?.text = rounded1
+                binding?.textViewTotalEnergetico?.text = ("$rounded1 MJ")
                 binding?.salve1?.text = sm.toString()
             }
 
@@ -54,13 +51,19 @@ class ObterBalancoActivity : AppCompatActivity() {
         database.get().addOnSuccessListener {
 
             if (it.exists()) {
-                val soma = it.child("produçaodomilho").value
-                val rounded1 = df.format(soma)
-                val stringsoma = soma.toString()
+                val soma = it.child("produçaodomilho").value.toString()
+                val sm1 = soma.toDouble()
+                val soma2= it.child("grao").value.toString()
+                val sm2 = soma2.toDouble()
+                val soma3= it.child("silagem").value.toString()
+                val sm3 = soma3.toDouble()
+                val somatotal = sm1 + sm2 + sm3
+                val rounded1 = df.format(somatotal)
+                val stringsoma = somatotal.toString()
 
                 val sm = stringsoma.toDouble()
 
-                binding?.textViewTotalEnergeticoProduzido?.text = rounded1.toString()
+                binding?.textViewTotalEnergeticoProduzido?.text = ("$rounded1 MJ")
                 binding?.salve2?.text = sm.toString()
 
             }
@@ -69,7 +72,7 @@ class ObterBalancoActivity : AppCompatActivity() {
     }
 
 
-    fun CalBalancoEnegetico() {
+    fun calBalancoEnegetico() {
 
         val entrada = binding?.salve1?.text.toString()
         val doubleentrada = entrada.toDouble()
@@ -81,14 +84,14 @@ class ObterBalancoActivity : AppCompatActivity() {
             val rounded1 = df.format(EE)
             val RE = doubleentrada / doublesaida
             val rounded2 = df.format(RE)
-            val BE = doubleentrada - doublesaida
+            val BE = doublesaida - doubleentrada
             val rounded3 = df.format(BE)
 
 
 
-            binding?.textViewTotalEficaciaEnergetica?.text = rounded1.toString()
-            binding?.textViewRazOEnergTica?.text = rounded2.toString()
-            binding?.textViewBalanOEnergTico?.text = rounded3.toString()
+            binding?.textViewTotalEficaciaEnergetica?.text = ("$rounded1 MJ")
+            binding?.textViewRazOEnergTica?.text = ("$rounded2 MJ")
+            binding?.textViewBalanOEnergTico?.text = ("$rounded3 MJ")
 
             database = FirebaseDatabase.getInstance()
                 .getReference("Eficacia Energetica,Razao Energetica,Balanco Energetico")
