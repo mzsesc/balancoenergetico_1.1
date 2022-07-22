@@ -1,8 +1,10 @@
 package com.ufs.balancoenergetico
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import com.ufs.balancoenergetico.databinding.ActivityOrientacaoBinding
 
 class OrientacaoActivity : AppCompatActivity() {
@@ -15,13 +17,11 @@ class OrientacaoActivity : AppCompatActivity() {
 
         setContentView(binding!!.root)
 
-        var orientacao1 = getString(R.string.Orientação1)
-        var orientacao2 = getString(R.string.Orientação2)
-        var orientacao3 = getString(R.string.Orientação3)
+        binding?.orientacao1?.text = getString(R.string.Orientação1)
+        binding?.orientacao2?.text =  getString(R.string.Orientação2)
+        binding?.orientacao3?.text = getString(R.string.Orientação3)
+        binding!!.obs.text = getString(R.string.obs)
 
-        binding?.orientacao1?.text =orientacao1
-        binding?.orientacao2?.text =orientacao2
-        binding?.orientacao3?.text =orientacao3
 
         binding!!.button4.setOnClickListener {
             val intent = Intent(this, InitialMainActivity::class.java)

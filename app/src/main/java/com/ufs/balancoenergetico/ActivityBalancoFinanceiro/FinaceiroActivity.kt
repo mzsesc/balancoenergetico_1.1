@@ -56,9 +56,9 @@ class FinaceiroActivity : AppCompatActivity() {
                 binding?.textViewHerbicida?.text = (rounded5)
                 binding?.textViewInseticidas?.text = (rounded6)
 
-                val oleodissel = it.child("lubrificante").value
+                val oleodissel = it.child("oleodissel").value
                 val rounded7 = df.format(oleodissel)
-                val lubrificante = it.child("oleodissel").value
+                val lubrificante = it.child("lubrificante").value
                 val rounded8 = df.format(lubrificante)
                 val trator = it.child("trator").value
                 val rounded9 = df.format(trator)

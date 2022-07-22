@@ -11,12 +11,25 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="Relatorio">Voce inseriu em sua lavaoura um valor energetico  de %1$d, e produziu um
-        valor energetico de %2$d, realizando o balanço energetico voce obteve um valor de %3$d.</string>
+    <string name="RelatorioEnergetico"> O resultado do Balanço Energético de sua lavoura foi %1$s MJ.</string>
+    <string name="EnergeticoPositivo">Esse valor indica que o resultado da sua produção foi positivo, tendo uma boa relação entre as quantidades de energia de ENTRADA e SAÍDA, atingindo níveis satisfatórios de eficiência cultural e produtiva</string>
+    <string name="EnergeticoNegativo">Esse valor indica que o resultado da sua produção foi negativo, tendo uma relação insuficiente entre as quantidades de energia de ENTRADA e SAÍDA, atingindo níveis insatisfatórios de eficiência cultural e produtiva</string>
 
-    <string name="Orientação1">Ao clicar no botão energético voce será direcionado para uma tela onde primeiro irar inserir os dados entrada, e depois disso, pode inserir os dados de saída. Após essas etapas voce poderá clicar em obter balanço energético</string>
-    <string name="Orientação2">Ao clicar no botão Financeiro voce será direcionado para uma tela onde voce poderá primeiramente inserir os dados de entrada do balanço financeiro, e depois dessa etapa inserir os dados de saída, após essa etapa poderá clicar em Obter balanço Financeiro</string>
-    <string name="Orientação3">Após obter o balanço Energético e Financeiro, poderá clicar em Relatório, onde tem botão que ao clicar ira lhe informa todos os dados Resumido que já forma inseridos</string>
+    <string name="RelatorioFinanceiro">O resultado do Balanço Financeiro de sua lavoura foi R$ %1$s.</string>
+    <string name="FinanceiroPositivo">Esse valor indica que o resultado do investimento financeiro foi positivo demonstrando o lucro obtido da sua produção.</string>
+    <string name="FinanceiroNegativo">Esse valor indica que o resultado do investimento financeiro foi negativo demonstrando o prejuízo obtido da sua produção.</string>
+<string name="msg">Até mais e muito obrigado!</string>
+    <string name="Esplicacao">O Balanço Energético se constitui em uma das mais eficazes maneiras de se comparar a viabilidade dos sistemas agrícolas, por proporcionar o conhecimento acerca do sistema adotado tendo a possibilidade de contornar possíveis aspectos negativos na produção.
+O aplicativo também disponibiliza o Balanço financeiro, que é outra ferramenta bastante útil de forma que o produtor poderá, através de um toque na tela, analisar o nível de capitalização resultante do seu investimento agrícola.
+Para usar o aplicativo basta seguir as seguintes orientações:</string>
+    <string name="saudação">Até mais e muito obrigado!</string>
+
+    <string name="Orientação1">Ao acessar o sistema e apertar o botão <b>ENERGÉTICO</b>, que está relacionado ao Balanço Energético, o usuário vai inserir os dados de <b>ENTRADA</b>, que são as quantidades usadas como insumos em sua produção. Logo após, o usuário digita os valores de <b>SAÍDA</b>, com os valores da quantidade resultado em sua produção. </string>
+    <string name="Orientação2">Para efetivar o Balanço Financeiro, o usuário segue a mesma lógica do Balanço Energético, apertando no botão <b>FINANCEIRO</b>,  porém, o usuário terá que digitar na <b>ENTRADA</b> e <b>SAÍDA</b>, os valores em real, moeda vigente, do custo pago por cada insumo (<b>ENTRADA</b>) e pelo valor obtido com o resultado final da lavoura (<b>SAÍDA</b>). </string>
+    <string name="Orientação3">Após o usuário inserir os dados do Balanço Energético e Financeiro, ao apertar o botão RELATÓRIO, será disponibilizado um pré diagnóstico da análise feita a partir dos dois processos.</string>
+    <string name="obs"><b>OBS</b>: <u>para separar</u> as casas decimais os usuários devem usar o ponto e não a virgula como comumente é feito.</string>
+
+
     <string name="inserir_dados">Inserir Dados</string>
     <string name="dados_de_entrada">Dados de Entrada</string>
 </resources>
